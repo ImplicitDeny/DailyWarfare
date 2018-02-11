@@ -1,0 +1,111 @@
+//folder-path mode
+class CfgFunctions
+{
+	class LM
+	{
+		class server
+		{
+			class createVehicle {};
+			class getSquareCenter {};
+			class markerCreation {};
+			class objectCreation {};
+			class powerSwitch {};
+			class createAceActionGlobal {};
+			class addInjurableGroup {};
+			class addInjurableUnit {};
+			class injured {};
+			class switchReinitValue {};
+			class getReinitValue {};
+		};
+		class client
+		{
+			class showLocalMissionError {};
+			class showLocalMissionNotification {};
+			class createAceActionLocal {};
+		};
+		class engine
+		{
+			class lancerMissionMain {};
+			class getRandomMissionNumber {};
+			class updateStatus {};
+			class openFob {};
+			class showGlobalMissionError {};
+			class showGlobalMissionNotification {};
+			class extraireNomPropre {};
+		};
+		class populate
+		{
+			class populateZone {};
+			class populateMilitaryTowers {};
+			class populateMilitaryWatchTowers {};
+			class populateSheds {};
+			class populateMilitaryQG {};
+			class populateSolarTowers {};
+			class populateHelipads {};
+			class alertPilots {};
+			class populatePatrols {};
+			class populateCasernes {};
+			class populateWanderingGroup {};
+			class alertZone {};
+			class gestionCaserne {};
+		};
+	};
+	class RWT
+	{
+		class cron
+		{
+			class cronInit { postInit = 1; };
+			class cronJobAdd {};
+			class cronJobRemove {};
+			class cronJobRun {};
+		};
+	};
+	class PLP
+	{
+		class anim
+		{
+			class calmSoldier3 {};
+		};
+	};
+};
+
+class CfgNotifications
+{
+	class MissionEngineError
+    {
+        title = "Erreur mission";
+        iconPicture = "\a3\Ui_f\data\GUI\Cfg\hints\voice_ca.paa";
+        description = "%1";
+        color[] = {1,0,0,1};
+        duration = 5;
+    };
+	class MissionEngineFobUnlock
+    {
+        title = "Le FOB %1 est déverrouillé";
+		iconPicture = "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa";
+        description = "Remplissez les sous-tâches pour activer ce FOB";
+        color[] = {0,1,0,1};
+        duration = 5;
+    };
+	class MissionEngineFobActive
+    {
+        title = "Le FOB %1 est actif";
+		iconPicture = "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa";
+        description = "Des missions secondaires seront attribuées dans la région";
+        color[] = {0,1,0,1};
+        duration = 5;
+    };
+	class MissionEngineFobLocked
+    {
+        title = "Le FOB %1 est verrouillé";
+		iconPicture = "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa";
+        description = "Réussissez des missions principales pour déverrouiller ce FOB";
+        color[] = {0,1,0,1};
+        duration = 5;
+    };
+};
+
+class CfgSounds
+{
+	#include "injured_ai.hpp"
+};
