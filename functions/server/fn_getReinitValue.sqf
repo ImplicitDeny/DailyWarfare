@@ -1,6 +1,4 @@
 /*
-	File: fn_markerCreation.sqf
-
 	Description:
 	Récupère la valeur actuelle de réinitialisation.
 */
