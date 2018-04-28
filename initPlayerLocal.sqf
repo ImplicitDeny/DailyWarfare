@@ -1,6 +1,6 @@
 //exec: client
 
-// Attente du statut de réinitialisation
+// Attente de diffusion du statut de réinitialisation
 waitUntil { !isNil "LM_MISSION_REINIT" };
 
 /////////////////////////////////////   Interactions commandant   /////////////////////////////////////

@@ -11,6 +11,7 @@ MISSION_ROOT = call {
 _nul = [] execVM "briefing.sqf";
 
 //Grille électrique - interaction ACE
+/*
 private _agela_power_plant_off = ["PowerOff","Désactiver centrale","",{["agela","off"] remoteExecCall ["LM_fnc_powerSwitch",2];},{true}] call ace_interact_menu_fnc_createAction;
 private _agela_power_plant_on = ["PowerOn","Activer centrale","",{["agela","on"] remoteExecCall ["LM_fnc_powerSwitch",2];},{true}] call ace_interact_menu_fnc_createAction;
 
@@ -70,3 +71,4 @@ private _zaros_power_plant_on = ["PowerOn","Activer centrale","",{["zaros","on"]
 
 [zaros_power_plant_laptop, 0, ["ACE_MainActions"], _zaros_power_plant_off] call ace_interact_menu_fnc_addActionToObject;
 [zaros_power_plant_laptop, 0, ["ACE_MainActions"], _zaros_power_plant_on] call ace_interact_menu_fnc_addActionToObject;
+*/

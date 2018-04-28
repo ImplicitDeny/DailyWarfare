@@ -3,7 +3,7 @@ _nul = "base\lights.sqf" remoteExec ["execVM", 0, true];
 _nul = []execVM "base\template.sqf";
 
 //Grille électrique - Détection des lampes en fonction des zones
-
+/*
 _lights = ["Land_fs_roof_F","Land_LampShabby_F","Land_LampDecor_F","Land_LampHalogen_F","Land_LampHarbour_F","Land_LampSolar_F","Land_LampStadium_F","Land_LampStreet_F","Land_LampStreet_small_F","Land_LandMark_F","Land_PowerPoleWooden_L_F"];
 _lights_numb = count(_lights);
 
@@ -50,7 +50,7 @@ for "_i" from 0 to (count (_zone_list) - 1) do
 		};
 		lamp_list pushBack _list;
 	};
-};
+};*/
 
 // Intendant
 LM_INTENDANT disableAI "ALL";
@@ -78,5 +78,40 @@ _pas_bouger = {
 ["ace_captiveStatusChanged", _pas_bouger] call CBA_fnc_addEventHandler;
 [_job, [], 0, 300, 0] call RWT_fnc_cronJobAdd;
 
-//Lancement du moteur de la mission
-_nul = []execVM "mission_engine.sqf";
+
+
+
+
+// ----- CHARGEMENT DES VARIABLES PERSISTANTES
+LM_MISSION_REINIT = profileNamespace getVariable ["LM_MISSION_REINIT", false]; //définie si la mission doit récupérer son ancien état ou non
+publicVariable "LM_MISSION_REINIT";
+LM_MISSION_DONE = [];
+LM_MISSION_MARKERS = [];
+LM_MISSION_TASKS = [];
+if(!LM_MISSION_REINIT) then {
+	LM_MISSION_DONE = (profileNamespace getVariable ["LM_MISSION_DONE",[] ]); // Liste de mains effectuées pour chaque FOB
+	LM_MISSION_MARKERS = (profileNamespace getVariable ["LM_MISSION_MARKERS",[] ]); // Liste des marqueurs associés à chaque FOB
+	LM_MISSION_TASKS = (profileNamespace getVariable ["LM_MISSION_TASKS",[] ]); // Liste des tâches associés à chaque FOB
+};
+
+// ----- CHARGEMENT DES VARIABLES DE MISSION
+LM_MISSION_STARTED = false; //variable transcrivant l'état actuel du générateur de missions
+publicVariable "LM_MISSION_STARTED";
+LM_MISSION_POSITION = [0,0]; //variable rendant accessible le "centre" de la zone de mission actuelle, utile pour les scripts de population ennemie
+LM_MISSION_TEMP = []; //tableau d'objets à supprimer
+LM_MISSION_MAIN_TASK = ""; //référence vers la tâche principale de la mission en cours
+
+// ----- RESTAURATION DES MARQUEURS
+{ (compile format ["marker_%1", _x] setMarkerColor "colorIndependent") } forEach LM_MISSION_DONE;
+
+//tableau de configuration des scripts de population : batiments militaires, abris industriels, hélipads, tours solaires, patrouilles, nombre minimum d'unités, alarme audible, casernes
+/*LM_MISSION_POPULATE_DEFAULT = [true, true, true, true, true, 60, true, true];
+LM_MISSION_POPULATE = LM_MISSION_POPULATE_DEFAULT;
+LM_MISSION_CASERNES = [];*/
+
+// ----- RESET DE LA VALEUR DE REINIT
+LM_MISSION_REINIT = false;
+profileNamespace setVariable ["LM_MISSION_REINIT", false];
+publicVariable "LM_MISSION_REINIT";
+
+LM_LISTE_ZONES = ["zaros"];

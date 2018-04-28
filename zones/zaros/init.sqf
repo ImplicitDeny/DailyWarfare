@@ -6,15 +6,22 @@
 _emplacements = ["stade", "bunker", "station"];
 
 // Sélection du mode de jeu
+	// CONQUETE : victoire totale sur objectifs nécessaire
 _modes = ["CONQUETE"];
 _mode = selectRandom _modes;
+
+[WEST,["task_zaros_main"],["Le KICC occupe la ville de <marker name='marker_zaros'>Zaros</marker>, utilisant la ville comme base de ses opérations dans le sud-ouest de l'île. Nous devons reprendre cette ville. Réalisez tous les objectifs pour conquérir la ville.", "Conquête de Zaros", "marker_zaros"],[14144.8,16246.2,0],true,1,true] call BIS_fnc_taskCreate;
+["task_zaros_main","attack"] call BIS_fnc_taskSetType;
+LM_MISSION_MAIN_TASK = "task_zaros_main";
+LM_MISSION_POSITION = getMarkerPos "marker_zaros";
 
 
 
 
 
 //----------Initialisation de l'environnement----------
-marker_zaros2 = createMarker ["marker_zaros2", getArray(configFile >> "CfgWorlds" >> worldName >> "Names" >> "Zaros" >> "position")]; "marker_zaros2" setMarkerType "Empty";
+
+/*
 zaros2_liste_localisations = [[9070,11890],[8965,12045],[9185,12015],[9230,11885]];
 [WEST,["task_zaros2_hostage_main"],["Le KICC retient des civils en otage à <marker name='marker_zaros2'>Zaros</marker>, espérant s'en servir comme monnaie d'échange contre certains de leurs officiers que nous avons capturé. Les otages n'ont pas pu être localisés avec précision mais quatre localisations potentielles ont été isolées, ils sont retenus sur l'une d'entres elles. Ramenez les otages à la base, dans la pièce marquée sur carte.", "Monnaie d'échange", "marker_zaros2"],[14144.8,16246.2,0],true,1,true] call BIS_fnc_taskCreate;
 ["task_zaros2_hostage_main","meet"] call BIS_fnc_taskSetType;
@@ -26,8 +33,8 @@ zaros2_liste_localisations = [[9070,11890],[8965,12045],[9185,12015],[9230,11885
 ["task_zaros2_hostage_c","meet"] call BIS_fnc_taskSetType;
 [WEST,["task_zaros2_hostage_d","task_zaros2_hostage_main"],["Otages trouvés : N/A", "Cellule potentielle D", ""],(zaros2_liste_localisations select 3),false,1,false] call BIS_fnc_taskCreate;
 ["task_zaros2_hostage_d","meet"] call BIS_fnc_taskSetType;
-LM_MISSION_MAIN_TASK = "task_zaros2_hostage_main";
-LM_MISSION_POSITION = getMarkerPos "marker_zaros2";
+
+
 
 //Initialisation du tableau de suppression
 _mission_object_array = [];
@@ -216,5 +223,7 @@ waitUntil
 deleteMarker "marker_zaros2";
 LM_COMMANDER setVariable ['zaros2_reussite', nil];
 deleteVehicle _trigger_hostage;
+
+*/
 
 // ... end of mission's code, do not edit any of the lines bellow.
