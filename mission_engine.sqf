@@ -10,16 +10,13 @@ params["_mission"];
 
 // Création du handle et exécution
 _handle = execVM format["zones\%1\init.sqf", _mission];
-// Récupération du marqueur associé
-_marker = compile format["_marker_%1",_mission];
-_marker setMarkerColor "colorOrange";
 
 // Préinit et synchronisation
 LM_MISSION_STARTED = true;
 publicVariable "LM_MISSION_STARTED";
 waitUntil{ !(LM_MISSION_POSITION isEqualTo [0,0]) };
 sleep 3; //temps pour initialiser la mission
-	
+
 /*
 	// Population ennemie
 	call LM_fnc_populateZone;
@@ -30,7 +27,7 @@ sleep 3; //temps pour initialiser la mission
 	diag_log format ["--- MISSION :: %1 - #%2->%3 - avg. %4 FPS", serverTime, LM_MISSION_COUNT, _mission, diag_fps];
 */
 
-_marker setMarkerColor "colorOpfor";
+LM_MISSION_MAIN_MARKER setMarkerColor "colorOpfor";
 
 // Attente de la fin de la mission
 waitUntil{scriptDone _handle};
@@ -49,7 +46,7 @@ LM_MISSION_TEMP = [];
 	//LM_MISSION_CASERNES = [];
 	//LM_MISSION_ALERTE = false;
 sleep 5;
-_marker setMarkerColor "colorIndependent";
+LM_MISSION_MAIN_MARKER setMarkerColor "colorIndependent";
 { [_x] call BIS_fnc_deleteTask } forEach ([LM_MISSION_MAIN_TASK] call BIS_fnc_taskChildren);
 // Mise à jour des moniteurs
 LM_MISSION_POSITION = [0,0];

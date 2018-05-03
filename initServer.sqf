@@ -100,6 +100,7 @@ publicVariable "LM_MISSION_STARTED";
 LM_MISSION_POSITION = [0,0]; //variable rendant accessible le "centre" de la zone de mission actuelle, utile pour les scripts de population ennemie
 LM_MISSION_TEMP = []; //tableau d'objets à supprimer
 LM_MISSION_MAIN_TASK = ""; //référence vers la tâche principale de la mission en cours
+LM_MISSION_MAIN_MARKER = "respawn_commandant";
 
 // ----- RESTAURATION DES MARQUEURS
 { (compile format ["marker_%1", _x] setMarkerColor "colorIndependent") } forEach LM_MISSION_DONE;
@@ -114,4 +115,4 @@ LM_MISSION_REINIT = false;
 profileNamespace setVariable ["LM_MISSION_REINIT", false];
 publicVariable "LM_MISSION_REINIT";
 
-LM_LISTE_ZONES = ["zaros"];
+LM_MISSION_ZONES = ["zaros"];

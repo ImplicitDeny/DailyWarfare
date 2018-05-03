@@ -63,3 +63,6 @@ _pos = [9207.65,12107.5,0];
 _object = createVehicle ["Oil_Spill_F", _pos, [], 0, "CAN_COLLIDE"];
 _object setDir 0;
 _object setPosATL _pos;
+
+// Objets interactibles
+execVM "zones\zaros\station\action.sqf";

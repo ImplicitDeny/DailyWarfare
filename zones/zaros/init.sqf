@@ -10,10 +10,21 @@ _emplacements = ["stade", "bunker", "station"];
 _modes = ["CONQUETE"];
 _mode = selectRandom _modes;
 
-[WEST,["task_zaros_main"],["Le KICC occupe la ville de <marker name='marker_zaros'>Zaros</marker>, utilisant la ville comme base de ses opérations dans le sud-ouest de l'île. Nous devons reprendre cette ville. Réalisez tous les objectifs pour conquérir la ville.", "Conquête de Zaros", "marker_zaros"],[14144.8,16246.2,0],true,1,true] call BIS_fnc_taskCreate;
-["task_zaros_main","attack"] call BIS_fnc_taskSetType;
+[WEST,["task_zaros_main"],["Le KICC occupe la ville de <marker name='marker_zaros'>Zaros</marker>, utilisant la ville comme base de ses opérations dans le sud-ouest de l'île. Nous devons reprendre cette ville. Réalisez tous les objectifs pour conquérir la ville.", "Conquête de Zaros", "marker_zaros"],"marker_zaros",true,1,true,"c"] call BIS_fnc_taskCreate;
 LM_MISSION_MAIN_TASK = "task_zaros_main";
 LM_MISSION_POSITION = getMarkerPos "marker_zaros";
+LM_MISSION_MAIN_MARKER = "marker_zaros";
+
+// Interrogation des emplacements
+{
+	[_mode] execVM format["zones\zaros\%1\init.sqf", _x]
+} forEach _emplacements;
+
+waitUntil {
+	{
+		if !(_x call BIS_fnc_taskCompleted) exitWith {false};
+	} forEach (LM_MISSION_MAIN_TASK call BIS_fnc_taskChildren);
+};
 
 
 
