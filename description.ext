@@ -98,3 +98,16 @@ class CfgSounds
 {
 	#include "injured_ai.hpp"
 };
+
+class CfgDebriefing
+{  
+	class nomods
+	{
+		title = "Vous n'avez pas les mods !";
+		subtitle = "Rassurez-vous, corriger cette situation est très facile";
+		description = "La Muerta a fait le choix d'un modpack léger afin de vous permettre de nous rejoindre vite et bénéficier de tonnes de fonctionnalités ! Visitez www.lamuerta.fr pour avoir tous les détails ! Pensez aussi à nous rejoindre sur TeamSpeak afin d'être guidé dans l'installation. A très bientôt !";
+		pictureBackground = "images\overlay.paa";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+};

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=642;
+		nextID=644;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1797;
+		nextID=1835;
 	};
 	class Camera
 	{
-		pos[]={14247.939,54.481331,16267.595};
-		dir[]={-0.81335223,-0.56739277,0.12949508};
-		up[]={-0.56038481,0.82336134,0.08922068};
-		aside[]={0.15724722,-1.0968943e-006,0.98766011};
+		pos[]={14400.746,24.475197,16319.287};
+		dir[]={-0.6636771,-0.18943805,-0.72374934};
+		up[]={-0.12807396,0.98188555,-0.13966422};
+		aside[]={-0.73709559,-3.8486905e-007,0.67592013};
 	};
 };
 binarizationWanted=0;
@@ -67,7 +67,8 @@ addons[]=
 	"VSM_Vests_Config",
 	"A3_Boat_F_Gamma_Boat_Civil_04",
 	"A3_Characters_F_Common",
-	"asr_ai3_skills"
+	"asr_ai3_skills",
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
@@ -763,7 +764,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=46;
+		items=47;
 		class Item0
 		{
 			dataType="Layer";
@@ -11522,6 +11523,37 @@ class Mission
 			id=636;
 			type="LM_HERCULE_UGV";
 			atlOffset=8.5830688e-005;
+		};
+		class Item46
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14200.18,19.586874,16272.389};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=643;
+					type="B_Soldier_VR_F";
+					atlOffset=-9.5367432e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=642;
+			atlOffset=-9.5367432e-006;
 		};
 	};
 	class Connections

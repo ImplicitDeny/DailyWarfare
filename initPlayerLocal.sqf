@@ -1,3 +1,8 @@
+// Vérification mods
+if !(isClass(configFile >> "CfgPatches" >> "LM_UNITS")) then { "nomods" call BIS_fnc_endMission };
+
+
+
 //exec: client
 
 /////////////////////////////////////   Interactions commandant   /////////////////////////////////////
