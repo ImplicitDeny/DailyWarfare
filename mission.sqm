@@ -7945,7 +7945,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="commandant";
+							value="#adminLogged";
 						};
 					};
 				};
