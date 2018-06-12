@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1759;
+		nextID=1797;
 	};
 	class Camera
 	{
-		pos[]={14169.207,31.71232,16298.659};
-		dir[]={0.067733951,-0.64138085,-0.7643888};
-		up[]={0.056613594,0.76714134,-0.63890588};
-		aside[]={-0.99620104,-1.6058293e-006,-0.088273689};
+		pos[]={14247.939,54.481331,16267.595};
+		dir[]={-0.81335223,-0.56739277,0.12949508};
+		up[]={-0.56038481,0.82336134,0.08922068};
+		aside[]={0.15724722,-1.0968943e-006,0.98766011};
 	};
 };
 binarizationWanted=0;
@@ -394,6 +394,326 @@ class CustomAttributes
 		name="Scenario";
 		class Attribute0
 		{
+			property="cba_settings_hash";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=4;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="#CBA_HASH#";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"ARRAY"
+									};
+								};
+								class value
+								{
+									items=4;
+									class Item0
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="tfar_samesrfrequenciesforside";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="tfar_setting_defaultfrequencies_sr_west";
+										};
+									};
+									class Item2
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="tfar_samelrfrequenciesforside";
+										};
+									};
+									class Item3
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="tfar_setting_defaultfrequencies_lr_west";
+										};
+									};
+								};
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"ARRAY"
+									};
+								};
+								class value
+								{
+									items=4;
+									class Item0
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"STRING"
+															};
+														};
+														value="101,102,103,104,105,106,40,80";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item2
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item3
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"STRING"
+															};
+														};
+														value="81,82,83,84,85,86,40,80,66.6";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								nil=1;
+								class type
+								{
+									type[]=
+									{
+										"ANY"
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="EnableDebugConsole";
 			expression="true";
 			class Value
@@ -411,7 +731,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=1;
+		nAttributes=2;
 	};
 };
 class Mission
@@ -1017,7 +1337,7 @@ class Mission
 								class Item0
 								{
 									dataType="Layer";
-									name="Bravo";
+									name="Alpha";
 									class Entities
 									{
 										items=1;
@@ -1041,7 +1361,8 @@ class Mission
 													class Attributes
 													{
 														rank="SERGEANT";
-														name="leader_bravo";
+														name="leader_alpha";
+														description="Team leader (Assaut)@Alpha";
 														isPlayable=1;
 													};
 													id=512;
@@ -1386,6 +1707,25 @@ class Mission
 											{
 												class Attribute0
 												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Alpha";
+														};
+													};
+												};
+												class Attribute1
+												{
 													property="acex_headless_blacklist";
 													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 													class Value
@@ -1403,7 +1743,7 @@ class Mission
 														};
 													};
 												};
-												nAttributes=1;
+												nAttributes=2;
 											};
 										};
 									};
@@ -1413,7 +1753,7 @@ class Mission
 								class Item1
 								{
 									dataType="Layer";
-									name="Alpha";
+									name="Bravo";
 									class Entities
 									{
 										items=1;
@@ -1437,7 +1777,8 @@ class Mission
 													class Attributes
 													{
 														rank="SERGEANT";
-														name="leader_alpha";
+														name="leader_bravo";
+														description="Team leader (Assaut)@Bravo";
 														isPlayable=1;
 													};
 													id=526;
@@ -1781,6 +2122,25 @@ class Mission
 											{
 												class Attribute0
 												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Bravo";
+														};
+													};
+												};
+												class Attribute1
+												{
 													property="acex_headless_blacklist";
 													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 													class Value
@@ -1798,7 +2158,7 @@ class Mission
 														};
 													};
 												};
-												nAttributes=1;
+												nAttributes=2;
 											};
 										};
 									};
@@ -1843,6 +2203,7 @@ class Mission
 													{
 														rank="SERGEANT";
 														name="leader_charlie";
+														description="Team leader (Appui)@Charlie";
 														isPlayable=1;
 													};
 													id=533;
@@ -2001,6 +2362,25 @@ class Mission
 											{
 												class Attribute0
 												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Charlie";
+														};
+													};
+												};
+												class Attribute1
+												{
 													property="acex_headless_blacklist";
 													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 													class Value
@@ -2018,7 +2398,7 @@ class Mission
 														};
 													};
 												};
-												nAttributes=1;
+												nAttributes=2;
 											};
 										};
 									};
@@ -2052,6 +2432,7 @@ class Mission
 													{
 														rank="SERGEANT";
 														name="leader_delta";
+														description="Team leader (Appui)@Delta";
 														isPlayable=1;
 													};
 													id=537;
@@ -2212,6 +2593,25 @@ class Mission
 											{
 												class Attribute0
 												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Delta";
+														};
+													};
+												};
+												class Attribute1
+												{
 													property="acex_headless_blacklist";
 													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 													class Value
@@ -2229,7 +2629,7 @@ class Mission
 														};
 													};
 												};
-												nAttributes=1;
+												nAttributes=2;
 											};
 										};
 									};
@@ -2274,7 +2674,7 @@ class Mission
 													{
 														rank="SERGEANT";
 														name="leader_echo";
-														description="Ingénieur en chef";
+														description="Ingénieur en chef@Echo";
 														isPlayable=1;
 													};
 													id=541;
@@ -2471,6 +2871,25 @@ class Mission
 											{
 												class Attribute0
 												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Echo";
+														};
+													};
+												};
+												class Attribute1
+												{
 													property="acex_headless_blacklist";
 													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 													class Value
@@ -2488,7 +2907,7 @@ class Mission
 														};
 													};
 												};
-												nAttributes=1;
+												nAttributes=2;
 											};
 										};
 									};
@@ -2522,7 +2941,7 @@ class Mission
 													{
 														rank="SERGEANT";
 														name="leader_foxtrot";
-														description="Médecin en chef";
+														description="Médecin en chef@Foxtrot";
 														isPlayable=1;
 													};
 													id=545;
@@ -2819,6 +3238,25 @@ class Mission
 											{
 												class Attribute0
 												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Foxtrot";
+														};
+													};
+												};
+												class Attribute1
+												{
 													property="acex_headless_blacklist";
 													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 													class Value
@@ -2836,7 +3274,7 @@ class Mission
 														};
 													};
 												};
-												nAttributes=1;
+												nAttributes=2;
 											};
 										};
 									};
@@ -2868,7 +3306,9 @@ class Mission
 													flags=6;
 													class Attributes
 													{
+														rank="SERGEANT";
 														name="leader_hotel";
+														description="Pilote d'hélicoptère@Eagle";
 														isPlayable=1;
 													};
 													id=570;
@@ -3002,6 +3442,48 @@ class Mission
 											};
 											id=569;
 											atlOffset=-1.9073486e-006;
+											class CustomAttributes
+											{
+												class Attribute0
+												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Eagle";
+														};
+													};
+												};
+												class Attribute1
+												{
+													property="acex_headless_blacklist";
+													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"BOOL"
+																};
+															};
+															value=0;
+														};
+													};
+												};
+												nAttributes=2;
+											};
 										};
 									};
 									id=421;
@@ -3044,8 +3526,9 @@ class Mission
 													flags=7;
 													class Attributes
 													{
+														rank="MAJOR";
 														name="Commandant";
-														description="Commandant";
+														description="Commandant@Commandement";
 														isPlayable=1;
 													};
 													id=573;
@@ -3197,6 +3680,48 @@ class Mission
 											{
 											};
 											id=572;
+											class CustomAttributes
+											{
+												class Attribute0
+												{
+													property="groupID";
+													expression="[_this, _value] call CBA_fnc_setCallsign";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"STRING"
+																};
+															};
+															value="Commandement";
+														};
+													};
+												};
+												class Attribute1
+												{
+													property="acex_headless_blacklist";
+													expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+													class Value
+													{
+														class data
+														{
+															class type
+															{
+																type[]=
+																{
+																	"BOOL"
+																};
+															};
+															value=0;
+														};
+													};
+												};
+												nAttributes=2;
+											};
 										};
 									};
 									id=489;
@@ -6902,7 +7427,7 @@ class Mission
 							};
 							id=124;
 							type="Land_Laptop_unfolded_F";
-							atlOffset=0.018188477;
+							atlOffset=0.018152237;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -7745,7 +8270,7 @@ class Mission
 							};
 							id=138;
 							type="Land_CampingTable_F";
-							atlOffset=0.14784622;
+							atlOffset=0.14793396;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -7911,11 +8436,11 @@ class Mission
 						};
 					};
 					id=120;
-					atlOffset=-65.339516;
+					atlOffset=-65.339577;
 				};
 			};
 			id=93;
-			atlOffset=299694.91;
+			atlOffset=30.178701;
 		};
 		class Item2
 		{
