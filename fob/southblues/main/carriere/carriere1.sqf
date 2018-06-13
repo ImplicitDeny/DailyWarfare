@@ -10,6 +10,9 @@ marker_carriere1 = createMarker ["marker_carriere1", [17075,11315]]; "marker_car
 LM_MISSION_MAIN_TASK = "task_carriere1";
 LM_MISSION_POSITION = getMarkerPos "marker_carriere1";
 
+//Désactivation de certains scripts d'occupation
+LM_MISSION_POPULATE = [true, true, true, true, true, 30, false];
+
 //Initialisation du tableau de suppression
 _mission_object_array = [];
 _mission_unit_array = [];
