@@ -17,7 +17,7 @@ La liste des personnes qui maintiennent et administrent ce dépôt :
 * **Cheitan** - *Développement initial*
 * **ArwynFr** - *Migration vers github*
 
-La liste complète des [contributeurs](https://github.com/lamuerta/account_manager/contributors) au projet est maintenue sur GitHub.
+La liste complète des [contributeurs](https://github.com/lamuerta/DailyWarfare/contributors) au projet est maintenue sur GitHub.
 
 ## License
 
