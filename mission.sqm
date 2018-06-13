@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=644;
+		nextID=647;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1835;
+		nextID=1873;
 	};
 	class Camera
 	{
-		pos[]={14400.746,24.475197,16319.287};
-		dir[]={-0.6636771,-0.18943805,-0.72374934};
-		up[]={-0.12807396,0.98188555,-0.13966422};
-		aside[]={-0.73709559,-3.8486905e-007,0.67592013};
+		pos[]={14840.288,25.421551,16738.734};
+		dir[]={-0.82591599,-0.28342706,0.48760188};
+		up[]={-0.24413089,0.95896935,0.14413123};
+		aside[]={0.50844973,1.0434596e-006,0.86123133};
 	};
 };
 binarizationWanted=0;
@@ -7428,7 +7428,7 @@ class Mission
 							};
 							id=124;
 							type="Land_Laptop_unfolded_F";
-							atlOffset=0.018152237;
+							atlOffset=0.018188477;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8271,7 +8271,7 @@ class Mission
 							};
 							id=138;
 							type="Land_CampingTable_F";
-							atlOffset=0.14793396;
+							atlOffset=0.14784622;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8437,11 +8437,11 @@ class Mission
 						};
 					};
 					id=120;
-					atlOffset=-65.339577;
+					atlOffset=-65.339516;
 				};
 			};
 			id=93;
-			atlOffset=30.178701;
+			atlOffset=30.17865;
 		};
 		class Item2
 		{
@@ -11530,30 +11530,171 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14200.18,19.586874,16272.389};
+						position[]={14170.134,19.583994,16265.632};
+						angles[]={0,4.5401878,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						isPlayer=1;
+						rank="CORPORAL";
+						description="NoMods@NoMods";
+						isPlayable=1;
 					};
-					id=643;
+					id=645;
 					type="B_Soldier_VR_F";
-					atlOffset=-9.5367432e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENGVR";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14170.868,19.582359,16266.859};
+						angles[]={0,4.9333515,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="NoMods";
+						isPlayable=1;
+					};
+					id=646;
+					type="B_Soldier_VR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENGVR";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
-			id=642;
-			atlOffset=-9.5367432e-006;
+			id=644;
 		};
 	};
 	class Connections
