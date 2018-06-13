@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1797;
+		nextID=1835;
 	};
 	class Camera
 	{
-		pos[]={14247.939,54.481331,16267.595};
-		dir[]={-0.81335223,-0.56739277,0.12949508};
-		up[]={-0.56038481,0.82336134,0.08922068};
-		aside[]={0.15724722,-1.0968943e-006,0.98766011};
+		pos[]={14265.826,35.466846,16274.104};
+		dir[]={-0.33532596,-0.37760842,0.86326122};
+		up[]={-0.13676091,0.92587548,0.35207748};
+		aside[]={0.93223906,-1.6654376e-006,0.36211994};
 	};
 };
 binarizationWanted=0;
@@ -4516,17 +4516,17 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={14255.702,21.983978,16316.463};
-										angles[]={0,2.7052603,0};
+										position[]={14255.557,21.484087,16316.381};
+										angles[]={0.0012918708,2.7052603,0};
 									};
 									side="Empty";
+									flags=4;
 									class Attributes
 									{
 										lock="UNLOCKED";
 									};
 									id=218;
 									type="LM_GHOST";
-									atlOffset=0.50000191;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4575,17 +4575,17 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={14231.45,22.021626,16300.364};
-										angles[]={0,2.4609141,0};
+										position[]={14231.45,21.521626,16300.364};
+										angles[]={0.0026520467,2.4609141,0};
 									};
 									side="Empty";
+									flags=4;
 									class Attributes
 									{
 										lock="UNLOCKED";
 									};
 									id=217;
 									type="LM_GHOST";
-									atlOffset=0.5;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4631,7 +4631,7 @@ class Mission
 								};
 							};
 							id=232;
-							atlOffset=0.46528435;
+							atlOffset=0.090257645;
 						};
 						class Item2
 						{
@@ -5366,7 +5366,7 @@ class Mission
 						};
 					};
 					id=230;
-					atlOffset=-9.082737;
+					atlOffset=-9.17665;
 				};
 				class Item2
 				{
@@ -7079,7 +7079,7 @@ class Mission
 				};
 			};
 			id=9;
-			atlOffset=-1.1802921;
+			atlOffset=-1.192009;
 		};
 		class Item1
 		{
