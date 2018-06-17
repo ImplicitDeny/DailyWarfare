@@ -14,7 +14,7 @@ if(_type == "main") then {
 		{
 			switch (_zone) do 
 			{
-				case "agios_dionysios": { 2 };
+				case "agios_dionysios": { 3 };
 				case "kavala": { 2 };
 				case "panochori": { 2 };
 				case "zaros": { 2 };

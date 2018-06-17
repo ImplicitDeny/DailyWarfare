@@ -5,7 +5,7 @@
 //----------Initialisation de l'environnement----------
 _liste_localisations = [[9250,15950,0],[9450,15950,0],[9350,15850,0]];
 _emplacement = floor(random 3);
-marker_agios_dionysios3 = createMarker ["marker_agios_dionysios3", (_liste_localisations select _emplacement)]; "marker_agios_dionysios3" setMarkerType "Empty";
+marker_agios_dionysios3 = createMarker ["marker_agios_dionysios3", (_liste_localisations select _emplacement)]; "marker_agios_dionysios3" setMarkerType "mil_unknown";
 [WEST,["task_agios_dionysios3_informer_main"],["Un soldat KICC nous fournissais des informations sur l'ennemi jusqu'à il y a encore quelques heures. Cet informateur a manqué son dernier cycle, puis nous a fait parvenir un signal de détresse. Sa dernière position connue était à <marker name='marker_agios_dionysios3'>Agios Dionysios</marker>. Nous le supposons en fuite. Le signal de détresse émet toujours mais faiblement, ce qui rend sa localisation difficile, à 50m près. Localisez et extrayez cet informateur.", "Informateur disparu", "marker_agios_dionysios3"],[14144.8,16246.2,0],true,1,true] call BIS_fnc_taskCreate;
 ["task_agios_dionysios3_informer_main","run"] call BIS_fnc_taskSetType;
 LM_MISSION_MAIN_TASK = "task_agios_dionysios3_informer_main";
@@ -63,7 +63,7 @@ _object = ["Land_HBarrier_3_F",[9124.58,15266.5,0],135.126,"SURFACE_NORMAL",fals
 _object = ["Land_HBarrier_5_F",[9138.04,15270.5,0],0,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; _mission_object_array pushback _object;
 
 // Ajustement de la Configuration
-_posInfoArray = selectRandom switch (_liste_localisations find _emplacement) do {
+_posInfoArray = selectRandom (switch (_emplacement) do {
 	case 0: {
 		[[[9238.13,15951.3,0.00144196],109.631],
 		[[9245.71,15950,0.00144196],31.4103],
@@ -75,6 +75,14 @@ _posInfoArray = selectRandom switch (_liste_localisations find _emplacement) do 
 		[[9300.32,15959,0.716293],352.985]]
 	};
 	case 1: {
+		[[[9425,15928.3,0.00193787],279.841],
+		[[9444.77,15939.9,0.00174713],236.34],
+		[[9454.76,15972.2,0.00146484],207.614],
+		[[9466,15973.9,0.696205],253.302],
+		[[9466.82,15995,1.84129],279.775],
+		[[9413.61,15970.7,0.00141907],19.5417]]
+	};
+	case 2: {
 		[[[9308.31,15876.8,0.00141144],153.678],
 		[[9328.65,15889,0.631882],328.054],
 		[[9346.56,15890.2,0.00147247],67.7032],
@@ -83,15 +91,22 @@ _posInfoArray = selectRandom switch (_liste_localisations find _emplacement) do 
 		[[9328.74,15852.3,0.27507],254.988],
 		[[9310.17,15824.3,3.27745],158.9]]
 	};
-	case 2: {
-		[[[9425,15928.3,0.00193787],279.841],
-		[[9444.77,15939.9,0.00174713],236.34],
-		[[9454.76,15972.2,0.00146484],207.614],
-		[[9466,15973.9,0.696205],253.302],
-		[[9466.82,15995,1.84129],279.775],
-		[[9413.61,15970.7,0.00141907],19.5417]]
+});
+
+//Spawn de l'informateur
+_informer = (createGroup [east, true]) createUnit ["KICC_FUSILIER", (_posInfoArray select 0), [], 0, "CAN_COLLIDE"];
+_informer setDir (_posInfoArray select 1);
+_informer disableAI "ALL";
+[_informer] spawn {
+	params["_informer"];
+	while {!(_informer getVariable ["ace_captives_isHandcuffed", false])} do {
+		_move = 1 + floor(random 2);
+		_informer playMoveNow format ["Acts_CivilHiding_%1", _move];
+		sleep 10;
 	};
 };
+_mission_unit_array pushBack _informer;
+
 
 //Garnison
 _position_defend_array = [[9231.25,15968.2,0],[9232.56,15959.5,0],[9728.7,15886.5,0],[9720,15876.7,0],[9126.18,15767.7,0],[9113.08,15762.2,0]];
