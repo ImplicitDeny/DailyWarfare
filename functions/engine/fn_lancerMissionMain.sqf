@@ -83,5 +83,4 @@ if(isNil "_handle") then
 	deleteVehicle _trigger;
 	LM_MISSION_STARTED = false;
 	publicVariable "LM_MISSION_STARTED";
-	diag_log format ["--- MISSION :: %1 - #%2->%3 ended", serverTime, LM_MISSION_COUNT, _mission, diag_fps];
 };

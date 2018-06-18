@@ -1,10 +1,6 @@
 //exec: server
 //instance: unique
 
-diag_log format ["--- %1 :: MISSION ENGINE HAS STARTED ---", serverTime];
-
-//variable transcrivant l'état actuel du moteur, true = actif, false = inactif
-LM_ENGINE_STATE = true;
 //variable transcrivant l'état actuel du générateur de missions
 LM_MISSION_STARTED = false;
 publicVariable "LM_MISSION_STARTED";
@@ -12,15 +8,11 @@ publicVariable "LM_MISSION_STARTED";
 LM_MISSION_POSITION = [0,0];
 //variable stockant le numéro de zone actuellement en cours, -1 si aucune mission lancée
 LM_MISSION_NUM_FOB = -1;
-//compteur du nombre de missions lancées
-LM_MISSION_COUNT = 0;
-//compteur de missions réussies
-LM_MISSION_SUCCESS = 0;
 //tableau d'objets à supprimer
 LM_MISSION_TEMP = [];
 //référence vers la tâche principale de la mission en cours
 LM_MISSION_MAIN_TASK = "";
-//tableau de stockage des objets FOB
+//tableau de stockage des objets FOB - inutilisé ?
 LM_MISSION_FOB_TEMP = [[],[],[],[]];
 //tableau de stockage des sides effectuées
 LM_MISSION_SIDES = [[],[],[],[]];
@@ -36,22 +28,20 @@ LM_MISSION_POPULATE = LM_MISSION_POPULATE_DEFAULT;
  * 1, highwatch = nord-ouest
  * 2, roadtrip = nord-est
  * 3, southblues = sud-est
- * 4, base = central
+ * 4, base = central, inutilisé pour le moment
 */
-LM_LISTE_FOB = ["greenvalley", "highwatch", "southblues", "roadtrip", "base"];
+LM_LISTE_FOB = ["greenvalley", "highwatch", "southblues", "roadtrip"];
 LM_LISTE_FOB_GREENVALLEY = ["agios_dionysios", "kavala", "panochori", "zaros"];
 LM_LISTE_FOB_HIGHWATCH = ["mars", "negades", "oreokastro"];
 LM_LISTE_FOB_ROADTRIP = ["paros_kalochori", "sofia"];
-// LM_LISTE_FOB_SOUTHBLUES = ["agia_pelagia", "carriere", "chalkeia"];
 LM_LISTE_FOB_SOUTHBLUES = ["carriere", "chalkeia"];
-LM_LISTE_FOB_BASE = ["pyrgos"];
 
 // Liste de mains effectuées pour chaque FOB
-LM_MISSION_DONE = [[],[],[],[],[]];
+LM_MISSION_DONE = [[],[],[],[]];
 // Liste des marqueurs associés à chaque FOB
-LM_MISSION_MARKERS = [[],[],[],[],[]];
+LM_MISSION_MARKERS = [[],[],[],[]];
 // Liste des tâches associés à chaque FOB
-LM_MISSION_TASKS = [[],[],[],[],[]];
+LM_MISSION_TASKS = [[],[],[],[]];
 // Moniteurs de l'état des FOB, LOCKED, OPEN, ACTIVE
 LM_MISSION_FOBS = ["LOCKED", "LOCKED", "LOCKED", "LOCKED"];
 
@@ -65,5 +55,3 @@ LM_MISSION_FOBS = ["LOCKED", "LOCKED", "LOCKED", "LOCKED"];
 [WEST,"task_fob_southblues",["Etat : VERROUILLÉ<br/><br/>Pour déverrouiller un FOB, sécurisez la région en réalisant suffisamment de missions principales dans le secteur.", "South Blues", "marker_fob_southblues"],getMarkerPos "marker_fob_southblues",false,1,false] call BIS_fnc_taskCreate;
 ["task_fob_southblues","wait"] call BIS_fnc_taskSetType;
 
-// Inscription du travail de log à la crontab
-[{diag_log format ["--- %1 :: MISSION ENGINE STILL RUNNING ---", serverTime]},[],0,600,0] call RWT_fnc_cronJobAdd;
