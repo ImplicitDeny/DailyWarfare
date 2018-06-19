@@ -19,7 +19,7 @@ Les meilleurs moyens d'entrer en contact avec nous sont :
 
 ## Gestion des branches
 
-Le projet utilise une organisation des branches de type [Gitflow](https://danielkummer.github.io/git-flow-cheatsheet/index.fr_FR.html).
+Le projet utilise une organisation des branches de type [Gitflow](https://nvie.com/posts/a-successful-git-branching-model/).
 
 Nous ajoutons simplement un groupe de branches appelées fork/ pour le code soumis par des contributeurs externes.
 
