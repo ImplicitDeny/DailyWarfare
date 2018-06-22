@@ -55,3 +55,10 @@ LM_MISSION_FOBS = ["LOCKED", "LOCKED", "LOCKED", "LOCKED"];
 [WEST,"task_fob_southblues",["Etat : VERROUILLÉ<br/><br/>Pour déverrouiller un FOB, sécurisez la région en réalisant suffisamment de missions principales dans le secteur.", "South Blues", "marker_fob_southblues"],getMarkerPos "marker_fob_southblues",false,1,false] call BIS_fnc_taskCreate;
 ["task_fob_southblues","wait"] call BIS_fnc_taskSetType;
 
+// Chargement des anciennes variables;
+LM_MISSION_REINIT = profileNamespace getVariable ["LM_MISSION_REINIT", false];
+if(LM_MISSION_REINIT) then {
+	call LM_fnc_switchReinitValue;
+} else {
+	call LM_fnc_loadMissionState;
+};

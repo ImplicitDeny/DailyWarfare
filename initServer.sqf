@@ -83,8 +83,5 @@ _pas_bouger = {
 LM_MISSION_REINIT = profileNamespace getVariable ["LM_MISSION_REINIT", false]; //définie si la mission doit récupérer son ancien état ou non
 publicVariable "LM_MISSION_REINIT";
 
-[] call LM_fnc_loadMissionState;
-
-
 //Lancement du moteur de la mission
 _nul = []execVM "mission_engine.sqf";

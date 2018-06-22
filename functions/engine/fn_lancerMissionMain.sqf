@@ -54,9 +54,6 @@ if(isNil "_handle") then
 	
 	if(count allGroups >= 250) then { ["Nombre de groupes existants a atteint 250"] call LM_fnc_showGlobalMissionError; };
 
-	// Log du lancement
-	diag_log format ["--- MISSION :: %1 - #%2->%3 - avg. %4 FPS", serverTime, LM_MISSION_COUNT, _mission, diag_fps];
-	
 	// Attente de la fin de la mission
 	waitUntil{scriptDone _handle};
 
@@ -83,4 +80,7 @@ if(isNil "_handle") then
 	deleteVehicle _trigger;
 	LM_MISSION_STARTED = false;
 	publicVariable "LM_MISSION_STARTED";
+
+	// Sauvegarde de l'état
+	call LM_fnc_saveMissionState
 };
