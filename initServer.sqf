@@ -78,5 +78,10 @@ _pas_bouger = {
 ["ace_captiveStatusChanged", _pas_bouger] call CBA_fnc_addEventHandler;
 [_job, [], 0, 300, 0] call RWT_fnc_cronJobAdd;
 
+
+//Chargement de l'état de la mission
+LM_MISSION_REINIT = profileNamespace getVariable ["LM_MISSION_REINIT", false]; //définie si la mission doit récupérer son ancien état ou non
+publicVariable "LM_MISSION_REINIT";
+
 //Lancement du moteur de la mission
 _nul = []execVM "mission_engine.sqf";

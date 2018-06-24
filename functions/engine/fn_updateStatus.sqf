@@ -2,6 +2,7 @@
 
 params["_fob", "_action", ["_zone", ""], ["_marker", ""], ["_task", ""]];
 _nombre = -1;
+
 if(_action isEqualTo "INIT") then
 {
 	// Réinit des missions

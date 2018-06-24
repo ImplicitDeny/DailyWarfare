@@ -3,6 +3,9 @@
 //vérification TeamSpeak
 call LM_fnc_teamSpeakChecker;
 
+// Attente de diffusion du statut de réinitialisation
+waitUntil { !isNil "LM_MISSION_REINIT" };
+
 /////////////////////////////////////   Interactions commandant   /////////////////////////////////////
 _statement = {
 	remoteExec ["LM_fnc_lancerMissionMain", 2];
@@ -10,6 +13,13 @@ _statement = {
 _actionOrdres = ["startMission", "Obtenir de nouveaux ordres", "", _statement,{!LM_MISSION_STARTED}] call ace_interact_menu_fnc_createAction;
 [LM_COMMANDER, 0, ["ACE_Head"], _actionOrdres] call ace_interact_menu_fnc_addActionToObject;
 
+_modifier_reinit = {
+	params ["_target", "_player", "_params", "_actionData"];
+    // Modify the action - index 1 is the display name, 2 is the icon...
+    _actionData set [1, format ["Réinit. au prochain redémarrage : %1", if(LM_MISSION_REINIT) then {"OUI"} else {"NON"}]];
+};
+_actionReinit = ["reinitMission", "Réinit. au prochain redémarrage : NON", "",{remoteExecCall ["LM_fnc_switchReinitValue", 2]},{serverCommandAvailable "#logout"},{},[],"",4,[false, false, false, false, false],_modifier_reinit] call ace_interact_menu_fnc_createAction;
+[LM_COMMANDER, 0, ["ACE_Head"], _actionReinit] call ace_interact_menu_fnc_addActionToObject;
 
 
 
