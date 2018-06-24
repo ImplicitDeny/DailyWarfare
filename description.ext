@@ -23,6 +23,7 @@ class CfgFunctions
 			class showLocalMissionError {};
 			class showLocalMissionNotification {};
 			class createAceActionLocal {};
+			class teamSpeakChecker {};
 		};
 		class engine
 		{

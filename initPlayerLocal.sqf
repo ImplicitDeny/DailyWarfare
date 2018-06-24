@@ -1,5 +1,8 @@
 //exec: client
 
+//vérification TeamSpeak
+call LM_fnc_teamSpeakChecker;
+
 // Attente de diffusion du statut de réinitialisation
 waitUntil { !isNil "LM_MISSION_REINIT" };
 
