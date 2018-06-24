@@ -6,11 +6,11 @@ _bw ppEffectEnable TRUE;
 
 sleep 2;
 
-titleText ["<t size=2>Merci de rejoindre notre serveur TeamSpeak\nIP : ts3.lamuerta.fr</t>", "PLAIN", 3, true, true];
+titleText ["<t size=2>Merci de rejoindre notre serveur TeamSpeak<br/>IP : ts3.lamuerta.fr</t>", "PLAIN", 3, true, true];
 
 while{!call TFAR_fnc_isTeamSpeakPluginEnabled} do {
 	sleep 1;
-	titleText ["<t size=2>Merci de rejoindre notre serveur TeamSpeak\nIP : ts3.lamuerta.fr</t>", "PLAIN", 0, true, true];
+	titleText ["<t size=2>Merci de rejoindre notre serveur TeamSpeak<br/>IP : ts3.lamuerta.fr</t>", "PLAIN", 0, true, true];
 };
 
 titleText["", "PLAIN"];
