@@ -15,7 +15,7 @@ _modifier_reinit = {
     // Modify the action - index 1 is the display name, 2 is the icon...
     _actionData set [1, format ["Réinit. au prochain redémarrage : %1", if(LM_MISSION_REINIT) then {"OUI"} else {"NON"}]];
 };
-_actionReinit = ["reinitMission", "Réinit. au prochain redémarrage : NON", "",{remoteExecCall ["LM_fnc_switchReinitValue", 2]},{true},{},[],"",4,[false, false, false, false, false],_modifier_reinit] call ace_interact_menu_fnc_createAction;
+_actionReinit = ["reinitMission", "Réinit. au prochain redémarrage : NON", "",{remoteExecCall ["LM_fnc_switchReinitValue", 2]},{serverCommandAvailable "#logout"},{},[],"",4,[false, false, false, false, false],_modifier_reinit] call ace_interact_menu_fnc_createAction;
 [LM_COMMANDER, 0, ["ACE_Head"], _actionReinit] call ace_interact_menu_fnc_addActionToObject;
 
 
