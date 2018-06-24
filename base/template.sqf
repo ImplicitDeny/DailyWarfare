@@ -5,7 +5,7 @@
 //_object = ["Land_PortableLight_double_F",[14152.6,16263.4,0],261.724,"SURFACE_NORMAL",true] call LM_fnc_objectCreation;
 //_object = ["Land_Portable_generator_F",[14181.4,16248.5,0],42.237,"SURFACE_NORMAL",true] call LM_fnc_objectCreation;
 //_object = ["Land_Portable_generator_F",[14152.4,16262.1,0],42.237,"SURFACE_NORMAL",true] call LM_fnc_objectCreation;
-_object = ["LM_BOARD_FREQUENCES",[14152.2,16259.9,0],203,"SURFACE_NORMAL",false] call LM_fnc_objectCreation;
+//_object = ["LM_BOARD_FREQUENCES",[14152.2,16259.9,0],203,"SURFACE_NORMAL",false] call LM_fnc_objectCreation;
 _object = ["Land_LampShabby_F",[14152.6,16259.4,-3],15,"SURFACE_NORMAL",false] call LM_fnc_objectCreation;
 
 //Briefing
@@ -93,7 +93,7 @@ _object = ["Land_MapBoard_F",[14148.820313,16253.577148,0.736004],36.6845,"",fal
 //Arsenal
 _object = ["Land_i_Shed_Ind_F",[14182.444336,16276.301758,0.389],42.111,"",true] call LM_fnc_objectCreation;
 _object allowDamage false;
-_object = ["LM_BOARD_FREQUENCES",[14180.933594,16280.699219,0.396006],314,"",false] call LM_fnc_objectCreation;
+//_object = ["LM_BOARD_FREQUENCES",[14180.933594,16280.699219,0.396006],314,"",false] call LM_fnc_objectCreation;
 _object = ["Land_PalletTrolley_01_khaki_F",[14187.679688,16277.248047,0.380453],132.111,"",false] call LM_fnc_objectCreation;
 _object = ["Land_PortableLight_double_F",[14195,16270,0.382],135,"",true] call LM_fnc_objectCreation;
 _object = ["Land_Portable_generator_F",[14196,16270,0.382],0,"",true] call LM_fnc_objectCreation;
@@ -126,7 +126,7 @@ _object = ["Land_CampingChair_V2_F",[14191.382813,16310.0517578,0.561165],58.184
 _object = ["Land_CampingChair_V2_F",[14190.646484,16310.704102,0.566216],45.182,"",true] call LM_fnc_objectCreation;
 _object = ["Land_CampingChair_V2_F",[14189.907227,16311.305664,0.571091],29.1775,"",true] call LM_fnc_objectCreation;
 _object = ["Land_CampingChair_V2_F",[14181.720703,16312.837891,0.731085],9.1792,"",true] call LM_fnc_objectCreation;
-_object = ["LM_BOARD_FREQUENCES",[14194.6,16307.8,0],317,"",false] call LM_fnc_objectCreation;
+//_object = ["LM_BOARD_FREQUENCES",[14194.6,16307.8,0],317,"",false] call LM_fnc_objectCreation;
 _object = ["Land_OfficeChair_01_F",[14187.294922,16313.143555,0.585766],327.167,"",true] call LM_fnc_objectCreation;
 _object = ["Land_OfficeChair_01_F",[14185.539063,16312.108398,0.591169],329.169,"",true] call LM_fnc_objectCreation;
 _object = ["Land_OfficeChair_01_F",[14184.431641,16309.936523,0.712658],58.1712,"",true] call LM_fnc_objectCreation;
@@ -172,7 +172,7 @@ _object = ["Land_Laptop_device_F",[14184.816406,16316.34375,1.44477],141.186,"",
 _object = ["Land_CampingTable_F",[14478.78418,16318.364258,0.32037],222,"",false] call LM_fnc_objectCreation;
 _object = ["Land_Map_altis_F",[14478.455078,16318.673828,1.12819],310,"",false] call LM_fnc_objectCreation;
 arsenal_pilotes = ["Box_NATO_Equip_F",[14473.934,16322.72,0.314],312.806,"",true] call LM_fnc_objectCreation; ["AmmoboxInit",[arsenal_pilotes,true,{true}]] spawn BIS_fnc_arsenal;
-_object = ["LM_BOARD_FREQUENCES",[14481.9,16319,0],312,"",false] call LM_fnc_objectCreation;
+//_object = ["LM_BOARD_FREQUENCES",[14481.9,16319,0],312,"",false] call LM_fnc_objectCreation;
 _object = ["Land_CampingTable_small_F",[14477.643555,16326.463867,0.32037],222,"",false] call LM_fnc_objectCreation;
 _object = ["Land_Map_altis_F",[14477.698242,16326.516602,1.12819],130.001,"",false] call LM_fnc_objectCreation;
 
@@ -328,7 +328,7 @@ _object = ["Land_LampHalogen_F",[14287.2,16422.4,0],100,"SURFACE_NORMAL",true] c
 //Port - Arsenal
 _object = ["Land_PortableLight_double_F",[15390.4,15876.6,0.118],260,"",false] call LM_fnc_objectCreation;
 _object = ["Land_Portable_generator_F",[15390.6,15875.8,0.133277],0,"",false] call LM_fnc_objectCreation;
-_object = ["LM_BOARD_FREQUENCES",[15407.759766,15880.542969,-6.53267e-005],84,"",false] call LM_fnc_objectCreation;
+//_object = ["LM_BOARD_FREQUENCES",[15407.759766,15880.542969,-6.53267e-005],84,"",false] call LM_fnc_objectCreation;
 _object = ["Land_PalletTrolley_01_khaki_F",[15397.0898438,15878.647461,0.0774903],85.5672,"",false] call LM_fnc_objectCreation;
 arsenal_marina = ["Land_PaperBox_open_full_F",[15397.133789,15877.926758,0.0780001],355.567,"",true] call LM_fnc_objectCreation; ["AmmoboxInit",[arsenal_marina,true,{true}]] spawn BIS_fnc_arsenal;
 

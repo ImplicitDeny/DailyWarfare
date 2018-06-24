@@ -62,9 +62,9 @@ LM_COMMANDER enableAI "ANIM";
 // Blocage des officiers
 _job = {
 	LM_COMMANDER setDir 252;
-	LM_INTENDANT setDir 105;
+	LM_INTENDANT setDir 121;
 	LM_COMMANDER setPosATL [14166.412, 16246.308, 0.763];
-	LM_INTENDANT setPosATL [14179.4,16278.3,0.00144577];
+	LM_INTENDANT setPosATL [14181.2,16280.4,0.00144196];
 };
 _pas_bouger = {
 	params["_unit", "_state", "_reason"];

@@ -77,13 +77,23 @@ _actionsRadArray pushBack (["getRadDelta", "Delta", "", _statement_radio, {true}
 { [LM_INTENDANT, 0, ["ACE_Head", "getRadMain"], _x] call ace_interact_menu_fnc_addActionToObject } forEach _actionsRadArray;
 
 // Réglage automatique des canaux au spawn
-sleep 5;
-_freq = switch(vehicleVarName leader group player) do {
-	case "leader_alpha": { "101" };
-	case "leader_bravo": { "102" };
-	case "leader_charlie": { "103" };
-	case "leader_delta": { "104" };
-	default { "80" };
+waitUntil { !isNil {call TFAR_fnc_activeSwRadio} ; };
+_chan = switch(groupId (group player)) do {
+	case "Alpha": { 0 };
+	case "Bravo": { 1 };
+	case "Charlie": { 2 };
+	case "Delta": { 3 };
+	case "Echo": { 4 };
+	case "Foxtrot": { 5 };
+	default { 7 };
 };
-[call TFAR_fnc_activeSwRadio, 1, _freq] call TFAR_fnc_SetChannelFrequency;
-[call TFAR_fnc_activeSwRadio, 2, "100"] call TFAR_fnc_SetChannelFrequency;
+[(call TFAR_fnc_activeSwRadio), _chan] call TFAR_fnc_setSwChannel;
+// Si leader infanterie, 80 en secondaire, stéréo gauche
+if(vehicleVarName player in ["leader_alpha", "leader_bravo", "leader_charlie", "leader_delta"]) then {
+	[(call TFAR_fnc_activeSwRadio), 7] call TFAR_fnc_setAdditionalSwChannel;
+	[(call TFAR_fnc_ActiveSWRadio), 1] call TFAR_fnc_setAdditionalSwStereo;
+};
+// Si opé radio, canal principal 80
+if(typeOf player isEqualTo "LM_BASE_OPERADIO") then {
+	[(call TFAR_fnc_activeLrRadio), 7] call TFAR_fnc_setLrChannel;
+};
