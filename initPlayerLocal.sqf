@@ -1,5 +1,8 @@
 //exec: client
 
+//vérification TeamSpeak
+call LM_fnc_teamSpeakChecker;
+
 /////////////////////////////////////   Interactions commandant   /////////////////////////////////////
 _statement = {
 	remoteExec ["LM_fnc_lancerMissionMain", 2];
