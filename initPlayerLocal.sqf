@@ -100,3 +100,12 @@ if(vehicleVarName player in ["leader_alpha", "leader_bravo", "leader_charlie", "
 if(typeOf player isEqualTo "LM_BASE_OPERADIO") then {
 	[(call TFAR_fnc_activeLrRadio), 7] call TFAR_fnc_setLrChannel;
 };
+
+if(vehicleVarName player in ["leader_echo", "leader_foxtrot"]) then {
+	player addItem "ACE_microDAGR";
+	player addItem "ACE_MapTools";
+	player linkItem "ItemMap";
+	player linkItem "ItemCompass";
+	player linkItem "TFAR_microdagr";
+	player linkItem "TFAR_anprc152";
+};
