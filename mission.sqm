@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1835;
+		nextID=1873;
 	};
 	class Camera
 	{
@@ -741,6 +741,7 @@ class Mission
 		briefingName="[LM] Daily Warfare - v2.3";
 		overviewText="Mission permanente de la team La Muerta. Demandez vos ordres au commandant et partez affronter le KICC en équipe !";
 		resistanceWest=0;
+		resistanceEast=1;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;
@@ -1325,7 +1326,7 @@ class Mission
 								};
 							};
 							id=156;
-							atlOffset=185.97;
+							atlOffset=-2.4192162;
 						};
 						class Item1
 						{
@@ -1748,7 +1749,7 @@ class Mission
 										};
 									};
 									id=415;
-									atlOffset=185.97;
+									atlOffset=1.9073486e-006;
 								};
 								class Item1
 								{
@@ -2163,11 +2164,10 @@ class Mission
 										};
 									};
 									id=413;
-									atlOffset=185.97;
 								};
 							};
 							id=494;
-							atlOffset=185.97;
+							atlOffset=-0.0016078949;
 						};
 						class Item2
 						{
@@ -2404,7 +2404,6 @@ class Mission
 										};
 									};
 									id=417;
-									atlOffset=185.97;
 								};
 								class Item1
 								{
@@ -2636,11 +2635,10 @@ class Mission
 										};
 									};
 									id=418;
-									atlOffset=185.97;
 								};
 							};
 							id=495;
-							atlOffset=185.97;
+							atlOffset=0.00033378601;
 						};
 						class Item3
 						{
@@ -2915,7 +2913,6 @@ class Mission
 										};
 									};
 									id=419;
-									atlOffset=185.97;
 								};
 								class Item1
 								{
@@ -3283,7 +3280,6 @@ class Mission
 										};
 									};
 									id=420;
-									atlOffset=185.97;
 								};
 								class Item2
 								{
@@ -3492,11 +3488,11 @@ class Mission
 										};
 									};
 									id=421;
-									atlOffset=185.97;
+									atlOffset=-1.9073486e-006;
 								};
 							};
 							id=496;
-							atlOffset=185.97;
+							atlOffset=-0.14200211;
 						};
 						class Item4
 						{
@@ -3730,15 +3726,13 @@ class Mission
 										};
 									};
 									id=489;
-									atlOffset=185.97;
 								};
 							};
 							id=497;
-							atlOffset=185.97;
 						};
 					};
 					id=10;
-					atlOffset=185.97;
+					atlOffset=0.12468719;
 				};
 				class Item1
 				{
@@ -7434,7 +7428,7 @@ class Mission
 							};
 							id=124;
 							type="Land_Laptop_unfolded_F";
-							atlOffset=0.018152237;
+							atlOffset=0.018188477;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8277,7 +8271,7 @@ class Mission
 							};
 							id=138;
 							type="Land_CampingTable_F";
-							atlOffset=0.14793396;
+							atlOffset=0.14784622;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8443,11 +8437,11 @@ class Mission
 						};
 					};
 					id=120;
-					atlOffset=-65.339577;
+					atlOffset=-65.339516;
 				};
 			};
 			id=93;
-			atlOffset=30.178701;
+			atlOffset=30.17865;
 		};
 		class Item2
 		{
