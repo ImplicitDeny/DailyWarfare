@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1873;
+		nextID=1949;
 	};
 	class Camera
 	{
@@ -435,66 +435,6 @@ class CustomAttributes
 										"ARRAY"
 									};
 								};
-								class value
-								{
-									items=4;
-									class Item0
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="tfar_samesrfrequenciesforside";
-										};
-									};
-									class Item1
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="tfar_setting_defaultfrequencies_sr_west";
-										};
-									};
-									class Item2
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="tfar_samelrfrequenciesforside";
-										};
-									};
-									class Item3
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="tfar_setting_defaultfrequencies_lr_west";
-										};
-									};
-								};
 							};
 						};
 						class Item2
@@ -506,190 +446,6 @@ class CustomAttributes
 									type[]=
 									{
 										"ARRAY"
-									};
-								};
-								class value
-								{
-									items=4;
-									class Item0
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"ARRAY"
-												};
-											};
-											class value
-											{
-												items=2;
-												class Item0
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"BOOL"
-															};
-														};
-														value=1;
-													};
-												};
-												class Item1
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"SCALAR"
-															};
-														};
-														value=1;
-													};
-												};
-											};
-										};
-									};
-									class Item1
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"ARRAY"
-												};
-											};
-											class value
-											{
-												items=2;
-												class Item0
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"STRING"
-															};
-														};
-														value="101,102,103,104,105,106,40,80";
-													};
-												};
-												class Item1
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"SCALAR"
-															};
-														};
-														value=1;
-													};
-												};
-											};
-										};
-									};
-									class Item2
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"ARRAY"
-												};
-											};
-											class value
-											{
-												items=2;
-												class Item0
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"BOOL"
-															};
-														};
-														value=1;
-													};
-												};
-												class Item1
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"SCALAR"
-															};
-														};
-														value=1;
-													};
-												};
-											};
-										};
-									};
-									class Item3
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"ARRAY"
-												};
-											};
-											class value
-											{
-												items=2;
-												class Item0
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"STRING"
-															};
-														};
-														value="81,82,83,84,85,86,40,80,66.6";
-													};
-												};
-												class Item1
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"SCALAR"
-															};
-														};
-														value=1;
-													};
-												};
-											};
-										};
 									};
 								};
 							};
@@ -7428,7 +7184,7 @@ class Mission
 							};
 							id=124;
 							type="Land_Laptop_unfolded_F";
-							atlOffset=0.018188477;
+							atlOffset=0.018152237;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8271,7 +8027,7 @@ class Mission
 							};
 							id=138;
 							type="Land_CampingTable_F";
-							atlOffset=0.14784622;
+							atlOffset=0.14793396;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8437,11 +8193,11 @@ class Mission
 						};
 					};
 					id=120;
-					atlOffset=-65.339516;
+					atlOffset=-65.339577;
 				};
 			};
 			id=93;
-			atlOffset=30.17865;
+			atlOffset=30.178701;
 		};
 		class Item2
 		{
