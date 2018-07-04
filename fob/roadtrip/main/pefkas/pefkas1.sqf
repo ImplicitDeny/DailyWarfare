@@ -19,10 +19,11 @@ _emp = [
 	[[20834.9,19193.2,0],245],
 	[[20885.6,19172.2,0],200]
 ];
+_arrayTigris = [];
 {
 	_v = [EAST, "KICC_TIGRIS", (_x select 0), (_x select 1)] call LM_fnc_createVehicle;
 	_v forceSpeed 0;
-	_mission_object_array pushBack _v;
+	_arrayTigris pushBack _v;
 } forEach _emp;
 [WEST,["task_pefkas_aa","task_pefkas1_main"],["Détruisez les moyens antiaériens à l'ouest de la base.", "Batterie AA", ""],[20834.9,19193.2,0],false,1,false,"destroy"] call BIS_fnc_taskCreate;
 
@@ -32,11 +33,12 @@ _emp = [
 	[21047.2,19224.5,0],
 	[21047.1,19206.5,0]
 ];
+_arraySochors = [];
 {
 	_v = "KICC_SOCHOR" createVehicle _x;
 	_v setDir 90;
 	_v lock true;
-	_mission_object_array pushBack _v;
+	_arraySochors pushBack _v;
 } forEach _emp;
 [WEST,["task_pefkas_lr","task_pefkas1_main"],["Détruisez la batterie d'artillerie à l'est de la base.", "Batterie 155mm", ""],[21047.2,19224.5,0],false,1,false,"destroy"] call BIS_fnc_taskCreate;
 
@@ -83,6 +85,8 @@ _deco = [["Land_Notepad_F",[20893.7,19227.9,1.41428],359.978],["Land_CampingTabl
 //----------Boucle principale----------
 waitUntil
 {
+	if({alive _x} count _arraySochors == 0) then {["task_pefkas_lr", "SUCCEEDED"] call BIS_fnc_taskSetState; {LM_MISSION_TEMP pushBack _x} forEach _arraySochors };
+	if({alive _x} count _arrayTigris == 0) then {["task_pefkas_aa", "SUCCEEDED"] call BIS_fnc_taskSetState {LM_MISSION_TEMP pushBack _x} forEach _arrayTigris };
 	sleep 5;
 	_fin = true;
 	{
