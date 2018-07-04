@@ -27,6 +27,7 @@ if(_type == "main") then {
 				case "mars": { 1 };
 				case "negades": { 2 };
 				case "oreokastro": { 1 };
+				case "montagnes_est": { 1 };
 			};
 		};
 		case "roadtrip":
