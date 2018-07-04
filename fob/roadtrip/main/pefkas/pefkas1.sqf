@@ -20,7 +20,7 @@ _emp = [
 	[[20885.6,19172.2,0],200]
 ];
 {
-	_v = ["EAST", "KICC_TIGRIS", (_x select 0), (_x select 1)] call LM_fnc_createVehicle;
+	_v = [EAST, "KICC_TIGRIS", (_x select 0), (_x select 1)] call LM_fnc_createVehicle;
 	_v forceSpeed 0;
 	_mission_object_array pushBack _v;
 } forEach _emp;
@@ -70,7 +70,7 @@ _bidons = [[[20895.6,19227.3,0.5],359.998],[[20895.7,19228.3,0.5],359.998],[[208
 	_b setDir (_x select 1);
 	_mission_object_array pushBack _b;
 } forEach _bidons;
-_deco = [["Land_Notepad_F",[20893.7,19227.9,1.41428],359.978],["Land_CampingTable_small_F",[20893.8,19228.1,0.603271],243.484],["Land_FilePhotos_F",[20893.5,19228.3,1.41428],80.2825],["Land_OfficeChair_01_F",[20890.8,19225.1,0.60067],125.383],["OfficeTable_01_new_F",[20889.8,19224.8,0.600668],241.956],["Land_PenBlack_F",[20893.6,19228.1,1.41427],359.997],["Land_MapBoard_01_Wall_Altis_F",[20889.5,19224.6,1.823],241.967],["Land_MapBoard_F",[20890.2,19231,0.59845],290.08]]
+_deco = [["Land_Notepad_F",[20893.7,19227.9,1.41428],359.978],["Land_CampingTable_small_F",[20893.8,19228.1,0.603271],243.484],["Land_FilePhotos_F",[20893.5,19228.3,1.41428],80.2825],["Land_OfficeChair_01_F",[20890.8,19225.1,0.60067],125.383],["OfficeTable_01_new_F",[20889.8,19224.8,0.600668],241.956],["Land_PenBlack_F",[20893.6,19228.1,1.41427],359.997],["Land_MapBoard_01_Wall_Altis_F",[20889.5,19224.6,1.823],241.967],["Land_MapBoard_F",[20890.2,19231,0.59845],290.08]];
 {
 	_d = createVehicle [(_x select 0), (_x select 1), [], 0, "CAN_COLLIDE"];
 	_d enableSimulation false;
@@ -88,7 +88,7 @@ waitUntil
 	{
 		_state = [_x] call BIS_fnc_taskState;
 		if( !(_state in ["SUCCEEDED","CANCELED"]) ) exitWith { _fin = false }
-	} forEach "task_pefkas1_main" call BIS_fnc_taskChildren;
+	} forEach ("task_pefkas1_main" call BIS_fnc_taskChildren);
 	_fin
 };
 
