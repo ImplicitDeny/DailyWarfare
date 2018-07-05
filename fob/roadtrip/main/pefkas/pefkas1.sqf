@@ -12,6 +12,19 @@ LM_MISSION_POSITION = getMarkerPos "marker_pefkas1";
 _mission_object_array = [];
 _mission_unit_array = [];
 
+//Niveau de désespoir et fonction de reddition
+surrender = 0;
+_surrenderWave = {
+	surrender = surrender + 0.25;
+	{
+		if(random 1 < surrender) then {
+			_e = _x findNearestEnemy _x;
+			if(!isNull _e && {(_x distance _e < 100)}) then {[_x, true] call ace_captives_fnc_setSurrendered}
+			else {_x allowFleeing 1};
+		};
+	} forEach ((LM_MISSION_POSITION nearEntities ["Man", 300]) select {side _x == east});
+};
+
 
 // Antiaérien
 _emp = [
@@ -57,6 +70,10 @@ _emp = [
 	_mission_object_array pushBack _m;
 } forEach _emp;
 [WEST,["task_pefkas_sr","task_pefkas1_main"],["Capturez la batterie de mortiers au nord de la base.", "Batterie 82mm", ""],[20912.9,19349.6,0],false,1,false,"interact"] call BIS_fnc_taskCreate;
+_trigger = createTrigger ["EmptyDetector", [20912.9,19349.6,0], false];
+_trigger setTriggerArea [5, 5, 0, false];
+_trigger setTriggerActivation ["WEST", "PRESENT", false];
+_trigger setTriggerStatements ["this", "['task_pefkas_sr', 'SUCCEEDED'] call BIS_fnc_taskSetState; [] spawn _surrenderWave", ""];
 
 // Recherches
 _filets = [[[20902.8,19231.3,0],0.000454269],[[20893.3,19236,0],344.28],[[20894.9,19236.8,0],327.749],[[20893.4,19237.8,0],65.6544]];
@@ -79,14 +96,41 @@ _deco = [["Land_Notepad_F",[20893.7,19227.9,1.41428],359.978],["Land_CampingTabl
 	_d setDir (_x select 2);
 	_mission_object_array pushBack _d;
 } forEach _deco;
-//objectif : ["Land_File1_F",[20893.7,19228.1,1.41428],38.1935]
 [WEST,["task_pefkas_rs","task_pefkas1_main"],["Trouvez la formule du carburant amélioré expérimenté par le KICC sur Altis.", "Recherches", ""],[20894.9,19228.1,0.5],false,1,false,"search"] call BIS_fnc_taskCreate;
+_obj = createVehicle ["Land_File1_F",[20893.7,19228.1,1.41428], [], 0, "CAN_COLLIDE"];
+_obj enableSimulation false;
+_obj setPosATL [20893.7,19228.1,1.41428];
+_obj setDir 38;
+_statement = {
+	params ["_target", "_player", "_params"];
+	deleteVehicle _target;
+	["task_pefkas_rs", "SUCCEEDED"] call BIS_fnc_taskSetState;
+};
+[_obj,0,["ACE_MainActions"],"pefkas_rs","Prendre les données","",_statement,{true}] call LM_fnc_createAceActionGlobal;
+
+// Boucles des tâches AA et LR
+[_arraySochors, _surrenderWave] spawn {
+	waitUntil {
+		sleep 5;
+		{alive _x} count (_this select 0) == 0
+	};
+	["task_pefkas_lr", "SUCCEEDED"] call BIS_fnc_taskSetState;
+	{LM_MISSION_TEMP pushBack _x} forEach (_this select 0);
+	[] spawn (_this select 1);
+};
+[_arrayTigris, _surrenderWave] spawn {
+	waitUntil {
+		sleep 5;
+		{alive _x} count (_this select 0) == 0
+	};
+	["task_pefkas_aa", "SUCCEEDED"] call BIS_fnc_taskSetState;
+	{LM_MISSION_TEMP pushBack _x} forEach (_this select 0);
+	[] spawn (_this select 1);
+};
+
 
 //----------Boucle principale----------
-waitUntil
-{
-	if({alive _x} count _arraySochors == 0) then {["task_pefkas_lr", "SUCCEEDED"] call BIS_fnc_taskSetState; {LM_MISSION_TEMP pushBack _x} forEach _arraySochors };
-	if({alive _x} count _arrayTigris == 0) then {["task_pefkas_aa", "SUCCEEDED"] call BIS_fnc_taskSetState {LM_MISSION_TEMP pushBack _x} forEach _arrayTigris };
+waitUntil {
 	sleep 5;
 	_fin = true;
 	{
@@ -99,7 +143,7 @@ waitUntil
 //----------Suppression de l'environnement----------
 {LM_MISSION_TEMP pushBack _x}forEach _mission_object_array;
 {LM_MISSION_TEMP pushBack _x}forEach _mission_unit_array;
-{LM_MISSION_TEMP pushBack _x}forEach _box_array;
 deleteMarker "marker_pefkas1";
+deleteVehicle _trigger;
 ["task_pefkas1_main", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
 // ... end of mission's code, do not edit any of the lines bellow.
