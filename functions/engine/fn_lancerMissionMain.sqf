@@ -36,6 +36,7 @@ if(_trouve_count == 1000) exitWith { ["Impossible de trouver une mission jouable
 // --------------------------------------------- EXECUTION DE LA MISSION ---------------------------------------------
 
 // Création du handle et exécution
+_mission = "fob\roadtrip\main\almyra\almyra1.sqf";
 _handle = execVM _mission;
 
 if(isNil "_handle") then
