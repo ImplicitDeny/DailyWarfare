@@ -76,6 +76,7 @@ _object = ["Land_CampingChair_V2_F", [23882.006,17000.334,0.714],151.591,"SURFAC
 _object = ["Land_Laptop_unfolded_F", [23881.465,17001.064,1.434],126.870,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_File1_F", [23881.979,17001.33,1.411],162.163,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 
+
 //FortainSud
 _object = ["Land_CncBarrier_F", [23514.67,16356.74,0], 142.797,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_Hbarrier_1_F", [23546.18,16327.349,2.180], 319.963,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
@@ -124,7 +125,7 @@ _object = ["Land_Cargo_House_V3_F", [22846.973,16399.805,0.002], 308.776,"SURFAC
 _object = ["Land_HbarrierTower_F", [22849.367,16406.387,0], 128.200,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_HbarrierTower_F", [22862.15,16376.903,0.043], 309.680,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_BagFence_Short_F", [22868.33,16414.492,0], 131.867,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
-_object = ["Land_BagFence_End_F", [22869,121,16415.367,0], 306.549,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
+_object = ["Land_BagFence_End_F", [22869.121,16415.367,0], 306.549,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_BagFence_Long_F", [22873.883,16415,0], 219.058,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_BagFence_Round_F", [22871.47,16416.414,0], 183.526,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
 _object = ["Land_HbarrierWall_corner_F", [22857.22,16419.078,0.006], 310.790,"SURFACE_NORMAL",false] call LM_fnc_objectCreation; LM_MISSION_TEMP pushback _object;
@@ -215,14 +216,17 @@ _object = ["Land_Cargo_Patrol_V3_F", [23383.514,16780.988,0],232.928 ,"SURFACE_N
 
 //Véhicules vides verrouillés
 _vehicle = ["KICC_OFFROAD_ARMED", [23321.506,16783.824,0], 70.517,"SURFACE_NORMAL",true] call LM_fnc_objectCreation; _vehicle lock true; LM_MISSION_TEMP pushback _vehicle;
-_vehicle = ["KICC_IFRIT", [23327.598,16772.730,0], 61.005,"SURFACE_NORMAL",true] call LM_fnc_objectCreation; _vehicle lock true; LM_MISSION_TEMP pushback _vehicle;
+_vehicle = ["KICC_IFRIT", [0,0,0], 61.005,"SURFACE_NORMAL",true] call LM_fnc_objectCreation; _vehicle setPosATL [23327.598,16772.730,0]; _vehicle lock true; LM_MISSION_TEMP pushback _vehicle;
+
 
 //Objectifs
-ObjTIGRIS = "KICC_TIGRIS" createVehicle [23352.963,16788.416,0]; createVehicleCrew ObjTIGRIS;
+ObjTIGRIS = "KICC_TIGRIS" createVehicle [0,0,0]; createVehicleCrew ObjTIGRIS;
 ObjTIGRIS setDir 237.954;
+ObjTIGRIS setPosATL [23352.963,16788.416,0];
 ObjTIGRIS forceSpeed 0;
-ObjTIGRIS_2 = "KICC_TIGRIS" createVehicle [23348.328,16795.768,0]; createVehicleCrew ObjTIGRIS_2;
+ObjTIGRIS_2 = "KICC_TIGRIS" createVehicle [0,0,0]; createVehicleCrew ObjTIGRIS_2;
 ObjTIGRIS_2 setDir 237.954;
+ObjTIGRIS_2 setPosATL [23348.328,16795.768,0];
 ObjTIGRIS forceSpeed 0;
 
 
