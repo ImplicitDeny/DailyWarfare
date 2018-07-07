@@ -6,6 +6,7 @@ marker_almyra1 = createMarker ["marker_almyra1", [23338,16784,0]]; "marker_almyr
 [WEST,["task_almyra1_main"],["Le <marker name='marker_almyra1'>lac salé d'Almyra</marker> peut vous sembler être une zone vide de tout intérêt mais elle offre pourtant un environnement visuel et radar très dégagé. Le KICC l'a bien compris et s'y est installé. Ils ont mis en place des moyens antiaériens lourds et cela rend la zone inopérable pour nos appareils aériens. Rendez vous là-bas et neutralisez leurs équipements Sol-Air.", "Opération Saltstorm", "marker_almyra1"],[23338,16784,0],true,1,true,"destroy"] call BIS_fnc_taskCreate;
 LM_MISSION_MAIN_TASK = "task_almyra1_main";
 LM_MISSION_POSITION = getMarkerPos "marker_almyra1";
+LM_MISSION_POPULATE = [true, true, true, true, true, 60, false];
 
 //Initialisation du tableau de suppression
 _mission_unit_array = [];
