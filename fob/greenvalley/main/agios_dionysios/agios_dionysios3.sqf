@@ -6,7 +6,7 @@
 _liste_localisations = [[9250,15950,0],[9450,15950,0],[9350,15850,0]];
 _emplacement = floor(random 3);
 marker_agios_dionysios3 = createMarker ["marker_agios_dionysios3", (_liste_localisations select _emplacement)]; "marker_agios_dionysios3" setMarkerType "mil_unknown";
-[WEST,["task_agios_dionysios3_informer_main"],["Un soldat KICC nous fournissais des informations sur l'ennemi jusqu'à il y a encore quelques heures. Cet informateur a manqué son dernier cycle, puis nous a fait parvenir un signal de détresse. Sa dernière position connue était à <marker name='marker_agios_dionysios3'>Agios Dionysios</marker>. Nous le supposons en fuite. Le signal de détresse émet toujours mais faiblement, ce qui rend sa localisation difficile, à 50m près. Localisez et extrayez cet informateur.", "Informateur disparu", "marker_agios_dionysios3"],[14144.8,16246.2,0],true,1,true] call BIS_fnc_taskCreate;
+[WEST,["task_agios_dionysios3_informer_main"],["Un soldat KICC nous fournissait des informations sur l'ennemi jusqu'à il y a encore quelques heures. Cet informateur a manqué son dernier cycle, puis nous a fait parvenir un signal de détresse. Sa dernière position connue était à <marker name='marker_agios_dionysios3'>Agios Dionysios</marker>. Nous le supposons en fuite. Le signal de détresse émet toujours mais faiblement, ce qui rend sa localisation difficile, à 50m près. Il se cache sûrement dans les environs. Localisez et extrayez cet informateur.", "Informateur disparu", "marker_agios_dionysios3"],[14144.8,16246.2,0],true,1,true] call BIS_fnc_taskCreate;
 ["task_agios_dionysios3_informer_main","run"] call BIS_fnc_taskSetType;
 LM_MISSION_MAIN_TASK = "task_agios_dionysios3_informer_main";
 LM_MISSION_POSITION = getMarkerPos "marker_agios_dionysios3";
