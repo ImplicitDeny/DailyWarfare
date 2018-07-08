@@ -1,14 +1,36 @@
-﻿// ------ Side mission de test -----
+﻿// ------ Side satellite -----
 // Author : [LM]Cheitan
 // Team   : La Muerta
+
+_objets = ["Land_WaterBottle_01_cap_F","Land_TorqueWrench_01_F","Land_BoreSighter_01_F","Land_TinContainer_F","Land_Sleeping_bag_folded_F","Land_FoodContainer_01_F"];
+
+_marker_roadtrip_side2 = createMarker ["marker_roadtrip_side2", [26293.1,25941.1]];
+"marker_roadtrip_side1" setMarkerType "ellipse";
+"marker_roadtrip_side1" setMarkerSize [2500,700];
+"marker_roadtrip_side1" markerDir 200;
+"marker_roadtrip_side1" setMarkerBrush "Horizontal";
+"marker_roadtrip_side1" setMarkerAlpha 0.5;
+"marker_roadtrip_side1" setMarkerColor "ColorOrange";
+
+_centre = [27940.6,25293.7,0];
+
+{
+	// Current result is saved in variable _x
+	
+} forEach _objets;
+
+
+
+
+
+
+
 
 _pos = [23155.8,20204.1,0];
 _target = createVehicle ["B_Quadbike_01_F", _pos, [], 0, "NONE"];
 _target setDir 267;
 _target setPosATL _pos;
 (LM_MISSION_FOB_TEMP select 2) pushBack _target;
-
-_marker_roadtrip_side1 = createMarker ["marker_roadtrip_side1", [23146.244,19963.342]]; "marker_roadtrip_side1" setMarkerType "Empty";
 
 _trigger = createTrigger ["EmptyDetector", getMarkerPos "marker_roadtrip_side1", false];
 _trigger triggerAttachVehicle [_target];
