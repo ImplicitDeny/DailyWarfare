@@ -35,6 +35,7 @@ if(_type == "main") then {
 			{
 				case "paros_kalochori": { 4 };
 				case "sofia": { 2 };
+				case "pefkas": { 1 };
 			};
 		};
 		case "southblues":
