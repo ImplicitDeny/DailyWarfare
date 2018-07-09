@@ -16,13 +16,13 @@ _centre = [27940.6,25293.7,0];
 
 {
 	//Créer l'objet
-	_v = createVehicle [_x, [0,0,0], [], 0, "NONE"];
+	_vehicle = createVehicle [_x, [0,0,0], [], 0, "NONE"];
 	//Position aléatoire
-	_v setPosATL (_centre getPos [floor(random 400), floor(random 360)]);
+	_vehicle setPosATL (_centre getPos [floor(random 400), floor(random 360)]);
 	//Création de marker dessus
-	_m = createMarker [format["mark_%1", _x], getPos _v];
-	_m setMarkerType "mil_triangle";
-	_m setMarkerColor "ColorRed";
+	_marker = createMarker [format["mark_%1", _x], getPos _vehicle];
+	_marker setMarkerType "mil_triangle";
+	_marker setMarkerColor "ColorRed";
 	//Action ACE de ramassage
 	_statement = {
 		params ["_target", "_player", "_params"];
@@ -30,9 +30,9 @@ _centre = [27940.6,25293.7,0];
 		if(typeOf _target isEqualTo "Land_FoodContainer_01_F") then {['task_roadtrip_side2', 'SUCCEEDED'] call BIS_fnc_taskSetState};
 		deleteVehicle _target;
 	};
-	[_v,0,["ACE_MainActions"],format["take_%",_forEachIndex],"Ramasser","",_statement,{true}] call LM_fnc_createAceActionGlobal;
+	[_vehicle,0,["ACE_MainActions"],format["take_%",_forEachIndex],"Ramasser","",_statement,{true}] call LM_fnc_createAceActionGlobal;
 	//Ajout à la suppression, au cas où
-	(LM_MISSION_FOB_TEMP select 2) pushBack _v;
+	(LM_MISSION_FOB_TEMP select 2) pushBack _vehicle;
 } forEach _objets;
 
 [WEST,["task_roadtrip_side2","task_fob_roadtrip"],["Suite à une erreur humaine, un satellite de notre flotte d'observation a raclé l'atmosphère d'un peu trop près. Bien évidemment, la majeure partie de l'engin s'est désintégré durant la chute, mais certaines pièces légères ou spécialement conçues ont pu parvenir jusqu'au sol. En particulier, l'ordinateur central de l'appareil devrait avoir survécu à la descente, protégé par un caisson spécial. Il nous serait utile de retrouver ce caisson afin de comprendre pourquoi la manoeuvre effectuée a désorbité l'appareil. Nous avons suivi durant la chute quelques gros débris. La majeure partie d'entre eux s'est écrasée en mer, mais certains ont touché l'île, et sont marqués sur votre carte. Avec un peu de chance, le caisson sera l'un d'entre eux. Trouvez-le, et ramassez aussi les autres débris si vous en avez le temps.", "Désorbitage imprévu","marker_roadtrip_side2"],_centre,true,1,true,"search"] call BIS_fnc_taskCreate;
