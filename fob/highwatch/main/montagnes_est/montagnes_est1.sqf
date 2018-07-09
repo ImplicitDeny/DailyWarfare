@@ -33,7 +33,7 @@ _mission_unit_array pushBack officier;
 
 // Création du parcours récursif
 fn_movement = {
-	sleep 5;
+	sleep (60 + floor(random 600)); // reste entre 1 et 10mn sur place
 	_wp = (group officier) addWaypoint [selectRandom arrayCible, 0];
 	_wp setWaypointType "MOVE";
 	_wp setWaypointStatements ["true", "[] spawn fn_movement"];
@@ -44,7 +44,7 @@ _wp setWaypointBehaviour "CARELESS";
 _wp setWaypointSpeed "LIMITED";
 _wp setWaypointStatements ["true", "[] spawn fn_movement"];
 
-//Déclencheur otage
+//Déclencheur pièce de récupération des otages
 _trigger = createTrigger ["EmptyDetector",[14144.8,16246.2,0], false];
 _trigger triggerAttachVehicle [officier];
 _trigger setTriggerArea [2, 3, 23, true];
