@@ -18,8 +18,8 @@ _surrenderWave = {
 	surrender = surrender + 0.25;
 	{
 		if(random 1 < surrender) then {
-			_e = _x findNearestEnemy _x;
-			if(!isNull _e && {(_x distance _e < 100)}) then {[_x, true] call ace_captives_fnc_setSurrendered}
+			_ennemy = _x findNearestEnemy _x;
+			if(!isNull _ennemy && {(_x distance _ennemy < 100)}) then {[_x, true] call ace_captives_fnc_setSurrendered}
 			else {_x allowFleeing 1};
 		};
 	} forEach ((LM_MISSION_POSITION nearEntities ["Man", 300]) select {side _x == east});
@@ -34,9 +34,9 @@ _emp = [
 ];
 _arrayTigris = [];
 {
-	_v = [EAST, "KICC_TIGRIS", (_x select 0), (_x select 1)] call LM_fnc_createVehicle;
-	_v forceSpeed 0;
-	_arrayTigris pushBack _v;
+	_tigris = [EAST, "KICC_TIGRIS", (_x select 0), (_x select 1)] call LM_fnc_createVehicle;
+	_tigris forceSpeed 0;
+	_arrayTigris pushBack _tigris;
 } forEach _emp;
 [WEST,["task_pefkas_aa","task_pefkas1_main"],["Détruisez les moyens antiaériens à l'ouest de la base.", "Batterie AA", ""],[20834.9,19193.2,0],false,1,false,"destroy"] call BIS_fnc_taskCreate;
 
@@ -48,10 +48,10 @@ _emp = [
 ];
 _arraySochors = [];
 {
-	_v = "KICC_SOCHOR" createVehicle _x;
-	_v setDir 90;
-	_v lock true;
-	_arraySochors pushBack _v;
+	_sochor = "KICC_SOCHOR" createVehicle _x;
+	_sochor setDir 90;
+	_sochor lock true;
+	_arraySochors pushBack _sochor;
 } forEach _emp;
 [WEST,["task_pefkas_lr","task_pefkas1_main"],["Détruisez la batterie d'artillerie à l'est de la base.", "Batterie 155mm", ""],[21047.2,19224.5,0],false,1,false,"destroy"] call BIS_fnc_taskCreate;
 
@@ -62,12 +62,12 @@ _emp = [
 	[[20922.2,19349.3,0],266]
 ];
 {
-	_b = "Land_BagFence_Round_F" createVehicle (_x select 0);
-	_b setDir (_x select 1);
-	_m = "O_Mortar_01_F" createVehicle (_b getRelPos [1, 0]);
-	_m setDir ((_x select 1) + 180);
-	_mission_object_array pushBack _b;
-	_mission_object_array pushBack _m;
+	_sacs = "Land_BagFence_Round_F" createVehicle (_x select 0);
+	_sacs setDir (_x select 1);
+	_mortier = "O_Mortar_01_F" createVehicle (_sacs getRelPos [1, 0]);
+	_mortier setDir ((_x select 1) + 180);
+	_mission_object_array pushBack _sacs;
+	_mission_object_array pushBack _mortier;
 } forEach _emp;
 [WEST,["task_pefkas_sr","task_pefkas1_main"],["Capturez la batterie de mortiers au nord de la base.", "Batterie 82mm", ""],[20912.9,19349.6,0],false,1,false,"interact"] call BIS_fnc_taskCreate;
 _trigger = createTrigger ["EmptyDetector", [20912.9,19349.6,0], false];
@@ -79,34 +79,34 @@ _trigger setTriggerStatements ["this", "['task_pefkas_sr', 'SUCCEEDED'] call BIS
 _filets = [[[20902.8,19231.3,0],0.000454269],[[20893.3,19236,0],344.28],[[20894.9,19236.8,0],327.749],[[20893.4,19237.8,0],65.6544]];
 _bidons = [[[20895.6,19227.3,0.5],359.998],[[20895.7,19228.3,0.5],359.998],[[20894.9,19228.1,0.5],359.998],[[20901.7,19232.6,0.5],359.998]];
 {
-	_f = createVehicle ["CargoNet_01_barrels_F", (_x select 0), [], 0, "CAN_COLLIDE"];
-	_f setDir (_x select 1);
-	_mission_object_array pushBack _f;
+	_filet = createVehicle ["CargoNet_01_barrels_F", (_x select 0), [], 0, "CAN_COLLIDE"];
+	_filet setDir (_x select 1);
+	_mission_object_array pushBack _filet;
 } forEach _filets;
 {
-	_b = createVehicle ["Land_MetalBarrel_F", (_x select 0), [], 0, "CAN_COLLIDE"];
-	_b setPosATL (_x select 0);
-	_b setDir (_x select 1);
-	_mission_object_array pushBack _b;
+	_bidon = createVehicle ["Land_MetalBarrel_F", (_x select 0), [], 0, "CAN_COLLIDE"];
+	_bidon setPosATL (_x select 0);
+	_bidon setDir (_x select 1);
+	_mission_object_array pushBack _bidon;
 } forEach _bidons;
 _deco = [["Land_Notepad_F",[20893.7,19227.9,1.41428],359.978],["Land_CampingTable_small_F",[20893.8,19228.1,0.603271],243.484],["Land_FilePhotos_F",[20893.5,19228.3,1.41428],80.2825],["Land_OfficeChair_01_F",[20890.8,19225.1,0.60067],125.383],["OfficeTable_01_new_F",[20889.8,19224.8,0.600668],241.956],["Land_PenBlack_F",[20893.6,19228.1,1.41427],359.997],["Land_MapBoard_01_Wall_Altis_F",[20889.5,19224.6,1.823],241.967],["Land_MapBoard_F",[20890.2,19231,0.59845],290.08]];
 {
-	_d = createVehicle [(_x select 0), (_x select 1), [], 0, "CAN_COLLIDE"];
-	_d enableSimulation false;
-	_d setDir (_x select 2);
-	_mission_object_array pushBack _d;
+	_deco = createVehicle [(_x select 0), (_x select 1), [], 0, "CAN_COLLIDE"];
+	_deco enableSimulation false;
+	_deco setDir (_x select 2);
+	_mission_object_array pushBack _deco;
 } forEach _deco;
 [WEST,["task_pefkas_rs","task_pefkas1_main"],["Trouvez la formule du carburant amélioré expérimenté par le KICC sur Altis.", "Recherches", ""],[20894.9,19228.1,0.5],false,1,false,"search"] call BIS_fnc_taskCreate;
-_obj = createVehicle ["Land_File1_F",[20893.7,19228.1,1.41428], [], 0, "CAN_COLLIDE"];
-_obj enableSimulation false;
-_obj setPosATL [20893.7,19228.1,1.41428];
-_obj setDir 38;
+_objectif = createVehicle ["Land_File1_F",[20893.7,19228.1,1.41428], [], 0, "CAN_COLLIDE"];
+_objectif enableSimulation false;
+_objectif setPosATL [20893.7,19228.1,1.41428];
+_objectif setDir 38;
 _statement = {
 	params ["_target", "_player", "_params"];
 	deleteVehicle _target;
 	["task_pefkas_rs", "SUCCEEDED"] call BIS_fnc_taskSetState;
 };
-[_obj,0,["ACE_MainActions"],"pefkas_rs","Prendre les données","",_statement,{true}] call LM_fnc_createAceActionGlobal;
+[_objectif,0,["ACE_MainActions"],"pefkas_rs","Prendre les données","",_statement,{true}] call LM_fnc_createAceActionGlobal;
 
 // Boucles des tâches AA et LR
 [_arraySochors, _surrenderWave] spawn {
