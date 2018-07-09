@@ -53,7 +53,7 @@ if(_type == "main") then {
 		case "base": { 1 };
 		case "greenvalley": { 1 };
 		case "highwatch": { 1 };
-		case "roadtrip": { 1 };
+		case "roadtrip": { 2 };
 		case "southblues": { 1 };
 	};
 };
