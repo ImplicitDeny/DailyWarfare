@@ -19,8 +19,6 @@
 
 params["_classname","_position","_direction","_vertical_axis","_simulation"];
 
-_object = objNull;
-
 _object = createVehicle [_classname,_position, [], 0, "CAN_COLLIDE"];
 _object setPosATL _position;
 _object setdir _direction;
