@@ -32,8 +32,8 @@ LM_MISSION_POPULATE = LM_MISSION_POPULATE_DEFAULT;
 */
 LM_LISTE_FOB = ["greenvalley", "highwatch", "southblues", "roadtrip"];
 LM_LISTE_FOB_GREENVALLEY = ["agios_dionysios", "kavala", "panochori", "zaros"];
-LM_LISTE_FOB_HIGHWATCH = ["mars", "negades", "oreokastro"];
 LM_LISTE_FOB_ROADTRIP = ["paros_kalochori", "sofia", "pefkas"];
+LM_LISTE_FOB_HIGHWATCH = ["mars", "negades", "oreokastro", "montagnes_est"];
 LM_LISTE_FOB_SOUTHBLUES = ["carriere", "chalkeia"];
 
 // Liste de mains effectuées pour chaque FOB
