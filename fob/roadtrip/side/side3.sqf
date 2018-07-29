@@ -21,7 +21,7 @@ _site1 = [
 ];
 
 _site2 = [
-	["Land_AncientPillar_F",[27971.2,24109.3,-9.40232],0],
+	["Land_AncientPillar_F",[27971.2,24109.3,-8.6],0],
 	["Land_Stone_pillar_F",[27966.4,24108.3,-1.7829],0],
 	["Land_AncientPillar_fallen_F",[27974.5,24113.5,-1.09067],190],
 	["Land_AncientPillar_fallen_F",[27972.1,24105.1,-0.987808],0]
@@ -46,7 +46,7 @@ _obli = selectRandom _sites;
 _sites = _sites - _obli;
 
 // Site secondaire
-if(random 1 < 0.6) then {
+if(random 1 < 0.5) then {
 	_second = selectRandom _sites;
 	_sites = _sites - _second;
 };
@@ -79,12 +79,14 @@ LM_COMMANDER setVariable ["roadtrip_side3", 0, false]; // Variable du commandant
 
 		// Ajout du trigger de découverte
 		_pos = ((_x select 0) select 1); //position du premier objet de chaque site
+		_pos = [(_pos select 0), (_pos select 1), 0]; //Réinitialisation au niveau du sol pour éviter le trigger souterrain
 		_trigger = createTrigger ["EmptyDetector", _pos, false];
 		_trigger setPosATL _pos;
 		_trigger setTriggerArea [5, 5, 0, false, 5]; //sphère de 5m de rayon
 		_trigger setTriggerActivation ["WEST", "PRESENT", false];
 		_trigger setTriggerStatements ["this", "
 			LM_COMMANDER setVariable ['roadtrip_side3', (LM_COMMANDER getVariable 'roadtrip_side3')+1];
+			['Exercice de plongée : nouveau site antique découvert !'] remoteExec ['systemChat', 0];
 			deleteVehicle thisTrigger;
 		", ""];
 	};
