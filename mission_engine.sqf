@@ -12,7 +12,7 @@ LM_MISSION_NUM_FOB = -1;
 LM_MISSION_TEMP = [];
 //référence vers la tâche principale de la mission en cours
 LM_MISSION_MAIN_TASK = "";
-//tableau de stockage des objets FOB - inutilisé ?
+//tableau de stockage des objets FOB, utilisé par les sides
 LM_MISSION_FOB_TEMP = [[],[],[],[]];
 //tableau de stockage des sides effectuées
 LM_MISSION_SIDES = [[],[],[],[]];
