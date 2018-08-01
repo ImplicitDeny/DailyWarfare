@@ -126,3 +126,5 @@ if(_conditions_mission == true) then /* Valider la mission" */;
 4 Le leader (joueur) ordonne aux IA de se rendre dans ce marker
 5 Si les inconscients et les IA sont dans leurs zones respectives => succes et despawn
 */
+
+//testing commit
