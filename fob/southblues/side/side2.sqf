@@ -117,7 +117,7 @@ _conditions_mission = {
 	_retry
 };
 
-if(_conditions_mission == true) then /* "Valider la mission" */;
+if(_conditions_mission == true) then /* Valider la mission" */;
 
 /*
 1 Création d'un marker sur zone
