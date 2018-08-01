@@ -108,6 +108,7 @@ _trigger_obj_IA setTriggerActivation [/*_mission_unit_array (créer string corre
 _trigger_obj_IA setTriggerArea [8,8,3];
 
 
+//Mission accompli?
 _conditions_mission = {
 	params["_objectifs"];
 	_retry = false;
@@ -118,6 +119,9 @@ _conditions_mission = {
 };
 
 if(_conditions_mission == true) then /* Valider la mission" */;
+
+//Mission échec
+WaitUntil {sleep 5} if (!alive _group_LM) exitwith {/*échec mission*/}
 
 /*
 1 Création d'un marker sur zone
