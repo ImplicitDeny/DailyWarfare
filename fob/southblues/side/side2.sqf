@@ -71,25 +71,53 @@ _marker_fusion_groupe setMarkerSize [200,200];
 
 //Créer une fumigène sur un point (répété toutes les 60 secondes) --------------- ------- (là Syh s'amuse avec des choses dangereuses)
 while {_trigger_Spawn_KICC == true} do {
-waitUntil {sleep 60 }	_Smoke = "G_40mm_smokeBlue" createVehicle [,,0]; //<== entrer coordonnées
+waitUntil {sleep 60 }	_Smoke = "G_40mm_smokeBlue" createVehicle [14845,10731,0];
 if(_return == true) exitwith {};
 };
 
 //2 (indépendant ?)
 _trigger_fusion_groupe = createTrigger ["EmptyDetector",[14777,10798,0],false];
-_trigger_fusion_groupe = setTriggerActivation ["ANYPLAYER","PRESENT",false];
+_trigger_fusion_groupe setTriggerActivation ["ANYPLAYER","PRESENT",false];
 _trigger_fusion_groupe setTriggerArea [200,200,0,true,10];
 
 // attendre le trigger
 waitUntil { sleep 5 ; triggerActivated _trigger_fusion_groupe } ;
 
-//détection des joueurs (boucle de sécurité?)
+//détection des joueurs (intégrer boucle de sécurité?)
 _playable_proche = nearestObjects [[14777,10798,0], _type_array, 300, false];
 _players_proches = _playable_proche - _mission_unit_array //(_group_LM fonctionnel? pour remplacer _mission_unit_array)
 
 //IA rejoindre PLAYERS
 _mission_unit_array /*_group_LM si fonctionnel*/ join _players_proches;
 
+//Création du marker objectif inconscients
+_marker_obj_wonded = createMarker ["marker_obj_wonded",[14144.88,16246.116,0.581]];
+_marker_obj_wonded setMarkerShape "RECTANGLE";
+_marker_obj_wonded setMarkerSize [1,1,1];
+
+_trigger_wonded_returned = createTrigger ["EmptyDetector",[14144.88,16246.116,0.581],false];
+_trigger_wonded_returned setTriggerActivation ["_inconscients","PRESENT",false];
+_trigger_wonded_returned setTriggerArea [1,1,22,true,2];
+
+_marker_obj_IA = createMarker ["marker_obj_IA", [14135,16257,0]];
+_marker_obj_IA setMarkerShape "RECTANGLE";
+_marker_obj_IA setMarkerSize [8,8,3];
+
+_trigger_obj_IA = createTrigger ["EmptyDetector",[14135,16257,0],false];
+_trigger_obj_IA setTriggerActivation [/*_mission_unit_array (créer string correspondant)*/,"PRESENT",false];
+_trigger_obj_IA setTriggerArea [8,8,3];
+
+
+_conditions_mission = {
+	params["_objectifs"];
+	_retry = false;
+	if(_trigger_wonded_returned == true then {
+		_retry = _trigger_obj_IA == true;
+	};
+	_retry
+};
+
+if(_conditions_mission == true) then /* "Valider la mission" */;
 
 /*
 1 Création d'un marker sur zone
@@ -98,5 +126,3 @@ _mission_unit_array /*_group_LM si fonctionnel*/ join _players_proches;
 4 Le leader (joueur) ordonne aux IA de se rendre dans ce marker
 5 Si les inconscients et les IA sont dans leurs zones respectives => succes et despawn
 */
-
-//IL M'A FALLU 1 HEURE POUR RÉUSSIR A RELIER LE VS Code de mon PC PORTABLE AU GITHUB...
