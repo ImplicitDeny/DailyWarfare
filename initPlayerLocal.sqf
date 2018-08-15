@@ -61,46 +61,11 @@ _actionsMagArray pushBack (["getMag3", "3", "", _statement_getMags, {true}, {}, 
 _actionsMagArray pushBack (["getMag4", "4", "", _statement_getMags, {true}, {}, [4]] call ace_interact_menu_fnc_createAction);
 { [LM_INTENDANT, 0, ["ACE_Head", "getMagMain"], _x] call ace_interact_menu_fnc_addActionToObject } forEach _actionsMagArray;
 
-
-
-// Réglage automatique des canaux via action
-_statement_radio = {
-	params ["_target", "_player", "_params"];
-	[call TFAR_fnc_activeSwRadio, 1, (_params select 0)] call TFAR_fnc_SetChannelFrequency;
-	[call TFAR_fnc_activeSwRadio, 2, "100"] call TFAR_fnc_SetChannelFrequency;
-	hint format ["Votre radio est réglée pour le groupe %1 !", _params select 1];
-};
-_actionRadMain = ["getRadMain", "Réglage de la radio", "", { hint "Quel est votre groupe ?"; },{true}] call ace_interact_menu_fnc_createAction;
-[LM_INTENDANT, 0, ["ACE_Head"], _actionRadMain] call ace_interact_menu_fnc_addActionToObject;
-_actionsRadArray = [];
-_actionsRadArray pushBack (["getRadAlpha", "Alpha", "", _statement_radio, {true}, {}, ["101", "Alpha"]] call ace_interact_menu_fnc_createAction);
-_actionsRadArray pushBack (["getRadBravo", "Bravo", "", _statement_radio, {true}, {}, ["102", "Bravo"]] call ace_interact_menu_fnc_createAction);
-_actionsRadArray pushBack (["getRadCharlie", "Charlie", "", _statement_radio, {true}, {}, ["103", "Charlie"]] call ace_interact_menu_fnc_createAction);
-_actionsRadArray pushBack (["getRadDelta", "Delta", "", _statement_radio, {true}, {}, ["104", "Delta"]] call ace_interact_menu_fnc_createAction);
-{ [LM_INTENDANT, 0, ["ACE_Head", "getRadMain"], _x] call ace_interact_menu_fnc_addActionToObject } forEach _actionsRadArray;
-
-// Réglage automatique des canaux au spawn
+// Réglage automatique sur canal général au spawn
 waitUntil { !isNil {call TFAR_fnc_activeSwRadio} ; };
-_chan = switch(groupId (group player)) do {
-	case "Alpha": { 0 };
-	case "Bravo": { 1 };
-	case "Charlie": { 2 };
-	case "Delta": { 3 };
-	case "Echo": { 4 };
-	case "Foxtrot": { 5 };
-	default { 7 };
-};
-[(call TFAR_fnc_activeSwRadio), _chan] call TFAR_fnc_setSwChannel;
-// Si leader infanterie, 80 en secondaire, stéréo gauche
-if(vehicleVarName player in ["leader_alpha", "leader_bravo", "leader_charlie", "leader_delta"]) then {
-	[(call TFAR_fnc_activeSwRadio), 7] call TFAR_fnc_setAdditionalSwChannel;
-	[(call TFAR_fnc_ActiveSWRadio), 1] call TFAR_fnc_setAdditionalSwStereo;
-};
-// Si opé radio, canal principal 80
-if(typeOf player isEqualTo "LM_BASE_OPERADIO") then {
-	[(call TFAR_fnc_activeLrRadio), 7] call TFAR_fnc_setLrChannel;
-};
+[(call TFAR_fnc_activeSwRadio), 8] call TFAR_fnc_setSwChannel;
 
+// Ajout de matériel de navigation aux groupes spé médics et ingénieurs
 if(vehicleVarName player in ["leader_echo", "leader_foxtrot"]) then {
 	player addItem "ACE_microDAGR";
 	player addItem "ACE_MapTools";
