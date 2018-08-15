@@ -11,7 +11,7 @@ LM_MISSION_MAIN_TASK = "task_oreokastro1";
 LM_MISSION_POSITION = getMarkerPos "marker_oreokastro1";
 
 //Désactivation de certains scripts d'occupation
-LM_MISSION_POPULATE = [true, true, true, true, true, 20, false];
+LM_MISSION_POPULATE = [true, true, true, true, true, 40, false];
 
 //Initialisation du tableau de suppression
 _mission_object_array = [];
