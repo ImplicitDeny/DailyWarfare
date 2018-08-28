@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=642;
+		nextID=682;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1949;
+		nextID=2101;
 	};
 	class Camera
 	{
-		pos[]={14265.826,35.466846,16274.104};
-		dir[]={-0.33532596,-0.37760842,0.86326122};
-		up[]={-0.13676091,0.92587548,0.35207748};
-		aside[]={0.93223906,-1.6654376e-006,0.36211994};
+		pos[]={14163.395,31.439127,16278.478};
+		dir[]={0.1491867,-0.60125995,-0.78516233};
+		up[]={0.11224446,0.7989524,-0.59074461};
+		aside[]={-0.98252034,-3.1063246e-006,-0.18668716};
 	};
 };
 binarizationWanted=0;
@@ -2416,7 +2416,7 @@ class Mission
 											side="West";
 											class Entities
 											{
-												items=2;
+												items=3;
 												class Item0
 												{
 													dataType="Object";
@@ -2537,6 +2537,106 @@ class Mission
 													id=542;
 													type="LM_BASE_INGENIEUR";
 													atlOffset=-1.9073486e-006;
+													class CustomAttributes
+													{
+														class Attribute0
+														{
+															property="acex_headless_blacklist";
+															expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+															class Value
+															{
+																class data
+																{
+																	class type
+																	{
+																		type[]=
+																		{
+																			"BOOL"
+																		};
+																	};
+																	value=0;
+																};
+															};
+														};
+														class Attribute1
+														{
+															property="ace_isEngineer";
+															expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+															class Value
+															{
+																class data
+																{
+																	class type
+																	{
+																		type[]=
+																		{
+																			"SCALAR"
+																		};
+																	};
+																	value=2;
+																};
+															};
+														};
+														class Attribute2
+														{
+															property="speaker";
+															expression="_this setspeaker _value;";
+															class Value
+															{
+																class data
+																{
+																	class type
+																	{
+																		type[]=
+																		{
+																			"STRING"
+																		};
+																	};
+																	value="Male08ENG";
+																};
+															};
+														};
+														class Attribute3
+														{
+															property="pitch";
+															expression="_this setpitch _value;";
+															class Value
+															{
+																class data
+																{
+																	class type
+																	{
+																		type[]=
+																		{
+																			"SCALAR"
+																		};
+																	};
+																	value=1;
+																};
+															};
+														};
+														nAttributes=4;
+													};
+												};
+												class Item2
+												{
+													dataType="Object";
+													class PositionInfo
+													{
+														position[]={14168.673,19.586121,16256.537};
+														angles[]={0.00054105208,0.43633232,0.0011693706};
+													};
+													side="West";
+													flags=5;
+													class Attributes
+													{
+														skill=0.2;
+														name="ingenieur_3";
+														description="Ingénieur";
+														isPlayable=1;
+													};
+													id=661;
+													type="LM_BASE_INGENIEUR";
 													class CustomAttributes
 													{
 														class Attribute0
@@ -3633,7 +3733,7 @@ class Mission
 									};
 									id=224;
 									type="LM_MRAP_HUNTER_HMG";
-									atlOffset=-0.00082778931;
+									atlOffset=-0.0010108948;
 								};
 								class Item6
 								{
@@ -3651,7 +3751,7 @@ class Mission
 									};
 									id=225;
 									type="LM_MRAP_HUNTER_HMG";
-									atlOffset=-0.00061225891;
+									atlOffset=-0.00079536438;
 								};
 								class Item7
 								{
@@ -7184,7 +7284,7 @@ class Mission
 							};
 							id=124;
 							type="Land_Laptop_unfolded_F";
-							atlOffset=0.018152237;
+							atlOffset=0.018188477;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8027,7 +8127,7 @@ class Mission
 							};
 							id=138;
 							type="Land_CampingTable_F";
-							atlOffset=0.14793396;
+							atlOffset=0.14784622;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8193,11 +8293,11 @@ class Mission
 						};
 					};
 					id=120;
-					atlOffset=-65.339577;
+					atlOffset=-65.339516;
 				};
 			};
 			id=93;
-			atlOffset=30.178701;
+			atlOffset=30.17865;
 		};
 		class Item2
 		{
