@@ -62,9 +62,9 @@ LM_COMMANDER enableAI "ANIM";
 // Blocage des officiers
 _job = {
 	LM_COMMANDER setDir 252;
-	LM_INTENDANT setDir 105;
+	LM_INTENDANT setDir 121;
 	LM_COMMANDER setPosATL [14166.412, 16246.308, 0.763];
-	LM_INTENDANT setPosATL [14179.4,16278.3,0.00144577];
+	LM_INTENDANT setPosATL [14181.2,16280.4,0.00144196];
 };
 _pas_bouger = {
 	params["_unit", "_state", "_reason"];
@@ -77,6 +77,11 @@ _pas_bouger = {
 };
 ["ace_captiveStatusChanged", _pas_bouger] call CBA_fnc_addEventHandler;
 [_job, [], 0, 300, 0] call RWT_fnc_cronJobAdd;
+
+
+//Chargement de l'état de la mission
+LM_MISSION_REINIT = profileNamespace getVariable ["LM_MISSION_REINIT", false]; //définie si la mission doit récupérer son ancien état ou non
+publicVariable "LM_MISSION_REINIT";
 
 //Lancement du moteur de la mission
 _nul = []execVM "mission_engine.sqf";

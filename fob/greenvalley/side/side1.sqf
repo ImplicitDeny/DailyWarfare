@@ -1,25 +1,25 @@
-﻿// ------ Side mission de test -----
+﻿// ------ Déminage Makrynisi -----
 // Author : [LM]Cheitan
 // Team   : La Muerta
 
-_pos = [5745.226,11068.016,0];
-_target = createVehicle ["LM_PROWLER", _pos, [], 0, "NONE"];
-_target setDir 128;
-_target setDamage [0.75, true];
-_target setPosATL _pos;
-(LM_MISSION_FOB_TEMP select 0) pushBack _target;
+_marker_greenvalley_side1 = createMarker ["marker_greenvalley_side1", [13580.6,12186.1]];
+"marker_greenvalley_side1" setMarkerShape "ellipse";
+"marker_greenvalley_side1" setMarkerSize [50,50];
+"marker_greenvalley_side1" setMarkerAlpha 0.6;
+"marker_greenvalley_side1" setMarkerBrush "Horizontal";
+"marker_greenvalley_side1" setMarkerColor "ColorOpfor";
 
-_trigger = createTrigger ["EmptyDetector", getMarkerPos "marker_fob_greenvalley", false];
-_trigger triggerAttachVehicle [_target];
-_trigger setTriggerArea [20, 20, 0, false];
-_trigger setTriggerActivation ["VEHICLE", "PRESENT", true];
-_trigger setTriggerStatements ["this", "
-	['task_greenvalley_side1', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-", ""];
+[WEST,["task_greenvalley_side1","task_fob_greenvalley"],["L'île de <marker name='marker_greenvalley_side1'>Makrynisi</marker> est une réserve ornithologique reconnue dans tout le bassin méditerranéen. Elle a presque été épargnée par la guerre. Presque, parce qu'il y a des mois de cela, l'ancien commandant en charge des opérations a craint que le KICC n'y infiltre des équipes de nageurs de combat, dont le but serait d'atteindre tout navire cherchant à entrer dans le golfe. Il a donc fait évacuer un peu brusquement les biologistes encore présent, et a fait recouvrir l'île de mines APERS à pression.<br/><br/>Le commandement actuel juge cet état de fait problématique. Le KICC ayant été repoussé de la région, la communauté scientifique fait pression pour avoir de nouveau accès à l'île. Le déminage a donc été effectué, mais le Génie a égaré le plan de minage concernant les environs immédiats de l'ancien camp de base des biologistes. Votre tâche est donc de déminer le terrain dans un rayon de 50m à l'ancienne, au détecteur à métaux. Le génie nous a toutefois informé que précisément 24 mines manquent à l'inventaire. Faisons en sorte de les retrouver.<br/><br/>NOTE : utilisation du matériel ACE uniquement, pas de détecteur vanilla", "Déminage ornithologique", "marker_greenvalley_side1"],getMarkerPos "marker_greenvalley_side1",true,1,true,"mine"] call BIS_fnc_taskCreate;
 
-[WEST,["task_greenvalley_side1","task_fob_greenvalley"],["Un de nos conducteurs de véhicule a manqué un virage près de Panochori. L'équipe est sortie indemne de l'accident mais le Prowler y est resté. Il est nécessaire de récupérer l'épave et de la ramener à <marker name='marker_fob_greenvalley'>Green Valley</marker> afin que nos mécaniciens y jettent un oeil.", "Prowler accidenté", ""],_target,true,1,true] call BIS_fnc_taskCreate;
-["task_greenvalley_side1","repair"] call BIS_fnc_taskSetType;
+_mines = [];
 
+// Génération champ de mines
+for "_i" from 0 to 23 do {
+	_pos = ["marker_greenvalley_side1"] call CBA_fnc_randPosArea;
+	_mines pushBack (createMine ["APERSMine", _pos, [], 0]);
+};
 
-waitUntil { triggerActivated _trigger };
-deleteVehicle _trigger;
+waitUntil { sleep 5; count ([13580.6,12186.1,0] nearObjects ["MineBase", 50]) == 0 };
+
+["task_greenvalley_side1", "SUCCEEDED"] call BIS_fnc_taskSetState;
+deleteMarker "marker_greenvalley_side1";

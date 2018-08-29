@@ -11,6 +11,9 @@ marker_agia_pelagia1 = createMarker ["marker_agia_pelagia1", [23065,7280]]; "mar
 LM_MISSION_MAIN_TASK = "task_agia_pelagia1";
 LM_MISSION_POSITION = getMarkerPos "marker_agia_pelagia1";
 
+//Désactivation de certains scripts d'occupation
+LM_MISSION_POPULATE = [true, true, true, true, true, 60, false];
+
 //Initialisation du tableau de suppression
 _mission_object_array = [];
 

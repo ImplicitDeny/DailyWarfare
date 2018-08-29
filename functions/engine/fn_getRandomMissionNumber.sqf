@@ -14,7 +14,7 @@ if(_type == "main") then {
 		{
 			switch (_zone) do 
 			{
-				case "agios_dionysios": { 2 };
+				case "agios_dionysios": { 3 };
 				case "kavala": { 2 };
 				case "panochori": { 2 };
 				case "zaros": { 2 };
@@ -27,6 +27,7 @@ if(_type == "main") then {
 				case "mars": { 1 };
 				case "negades": { 2 };
 				case "oreokastro": { 1 };
+				case "montagnes_est": { 1 };
 			};
 		};
 		case "roadtrip":
@@ -35,6 +36,8 @@ if(_type == "main") then {
 			{
 				case "paros_kalochori": { 4 };
 				case "sofia": { 2 };
+				case "almyra": { 1 };
+				case "pefkas": { 1 };
 			};
 		};
 		case "southblues":
@@ -53,7 +56,7 @@ if(_type == "main") then {
 		case "base": { 1 };
 		case "greenvalley": { 1 };
 		case "highwatch": { 1 };
-		case "roadtrip": { 1 };
+		case "roadtrip": { 3 };
 		case "southblues": { 1 };
 	};
 };

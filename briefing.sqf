@@ -95,9 +95,6 @@ switch (side player) do
 		Forum :	forum.lamuerta.fr<br/>
 		Site web :	www.lamuerta.fr<br/>
 		Wiki :	wiki.lamuerta.fr<br/>"]];
-		
-		player createDiaryRecord ["Diary", ["Fréquences radio", 
-		"<img image='images\pdf.jpg' width='367' height='734'/>"]];
 	};
 	
 	case EAST: // REDFOR briefing goes here
